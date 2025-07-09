@@ -1,23 +1,26 @@
 import Header from "./components/Header";
-import HelpCard from "./components/HelpCard";
+import Footer from "./components/Footer";
+import MapComponent from "./components/MapComponent";
+import ServiceCard from "./components/ServiceCard";
+import { FaCarSide } from "react-icons/fa";
 
-function ServiceCard({
-  icon,
-  title,
-  description,
-}: {
-  icon: string;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="bg-white rounded-xl shadow p-6 text-center hover:shadow-lg transition w-full sm:w-1/2 md:w-1/3">
-      <div className="text-4xl mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
-    </div>
-  );
-}
+const cardsData = [
+  {
+    icon: "💻",
+    title: "Soutien informatique",
+    description: "Aide personnalisée à domicile pour tous vos appareils.",
+  },
+  {
+    icon: "🌐",
+    title: "Démarches en ligne",
+    description: "Je vous accompagne dans vos démarches administratives numériques.",
+  },
+  {
+    icon: "🔧",
+    title: "Installation & dépannage",
+    description: "Installation, configuration et résolution de problèmes informatiques.",
+  },
+];
 
 export function App() {
   return (
@@ -26,34 +29,72 @@ export function App() {
         <Header />
       </div>
       <section className="p-8">
-        <h2 className="text-2xl font-semibold text-center mb-6">Mes services</h2>
+        <h2 className="text-3xl font-extrabold text-blue-700 text-center mb-8 drop-shadow-md flex items-center justify-center gap-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8 text-blue-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 1010 10A10 10 0 0012 2z"
+            />
+          </svg>
+          Mes services
+        </h2>
+
         <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
-          <ServiceCard
-            icon="💻"
-            title="Soutien informatique"
-            description="Aide personnalisée à domicile pour tous vos appareils."
-          />
-          <ServiceCard
-            icon="🌐"
-            title="Démarches en ligne"
-            description="Je vous accompagne dans vos démarches administratives numériques."
-          />
-          <ServiceCard
-            icon="🔧"
-            title="Installation & dépannage"
-            description="Installation, configuration et résolution de problèmes informatiques."
-          />
+          {cardsData.map((card, i, arr) => {
+            // Calcul du délai d’animation en partant du bas (dernier élément delay = 0)
+            const delay = (arr.length - 1 - i) * 0.5; // 0.5s entre chaque animation
+
+            return (
+              <ServiceCard
+                key={i}
+                icon={card.icon}
+                title={card.title}
+                description={card.description}
+                style={{ animationDelay: `${delay}s` }}
+              />
+            );
+          })}
         </div>
-        <div>
-          <HelpCard />
-        </div>
+      </section>
+
+       <section className="p-8 opacity-0 translate-y-4 animate-fade-in-up animation-delay-700">
+          <h2 className="text-3xl font-extrabold text-blue-700 text-center mb-8 drop-shadow-md flex items-center justify-center gap-3">
+            <FaCarSide className="w-8 h-8 text-blue-500" />
+            Zone d’intervention
+          </h2>
+
+          <div className="max-w-4xl mx-auto">
+            <MapComponent />
+          </div>
+
+          <p className="text-center mt-4 text-gray-700">
+            J’interviens dans un rayon d’environ 20 km autour de Saint-Marceau, notamment à Sillé-le-Guillaume, Fresnay-sur-Sarthe, Beaumont-sur-Sarthe...
+          </p>
+        </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">Zone d’intervention</h2>
+        <p>
+          J’interviens principalement dans le nord de la Sarthe (72), autour de
+          Saint-Marceau, Sillé-le-Guillaume, Fresnay-sur-Sarthe, Beaumont-sur-Sarthe,
+          et leurs environs.
+        </p>
       </section>
 
       <section className="bg-white p-8 text-center">
         <h2 className="text-2xl font-semibold mb-4">À propos</h2>
         <p className="max-w-3xl mx-auto">
-          Passionné d’informatique, j’accompagne les particuliers — notamment les seniors —
-          pour leur simplifier la vie numérique, à leur rythme, avec bienveillance.
+          Passionné d’informatique, j’accompagne les particuliers — notamment les
+          seniors — pour leur simplifier la vie numérique, à leur rythme, avec
+          bienveillance.
         </p>
       </section>
 
@@ -63,9 +104,7 @@ export function App() {
         <p>📧 contact@example.com</p>
       </section>
 
-      <footer className="bg-blue-800 text-white text-center p-4">
-        © {new Date().getFullYear()} Antoine Lozach — Tous droits réservés
-      </footer>
+      <Footer />
     </div>
   );
 }
