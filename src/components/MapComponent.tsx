@@ -4,7 +4,7 @@ import { GoogleMap, LoadScript, Polygon, Circle } from "@react-google-maps/api";
 const containerStyle = {
   width: "100%",
   maxWidth: "1000px",
-  height: "500px",
+  height: "550px",
   margin: "0 auto",
   borderRadius: "12px",
   overflow: "hidden",
@@ -49,7 +49,7 @@ export default function MapComponent() {
           {/* Cercle de 20 km */}
           <Circle
             center={{ lat: 48.1623, lng: 0.0025 }} // le cercle reste centré sur Saint-Marceau
-            radius={20000}
+            radius={25000}
             options={{
               fillColor: "rgba(66, 135, 245, 0.2)",
               strokeColor: "#4287f5",
