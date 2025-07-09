@@ -1,17 +1,17 @@
 {
   "name": "site-antoine",
-  "homepage": "https://Hamtaromobile.github.io/assistant-numerique",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "tailwind:init": "tailwindcss init -p",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
+  "tailwind:init": "tailwindcss init -p",
+  "dev": "vite",
+  "build": "tsc && vite build",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+  }
+  ,
   "devDependencies": {
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",

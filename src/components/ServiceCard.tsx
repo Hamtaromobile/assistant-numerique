@@ -1,21 +1,10 @@
 import '../style.css';
+import { Link } from "react-router-dom";
 
-export default function ServiceCard({
-  icon,
-  title,
-  description,
-  href = "#",
-  style,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  href?: string;
-  style?: React.CSSProperties;
-}) {
+export default function ServiceCard({ icon, title, description, href = "#", style }: { icon: React.ReactNode; title: string; description: string; href?: string; style?: React.CSSProperties; }) {
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       style={style}
       className="service-card block bg-gray-100 rounded-xl shadow p-6 text-center border border-gray-300 transition w-full sm:w-1/2 md:w-1/3 hover:shadow-2xl hover:no-underline"
     >
@@ -28,7 +17,6 @@ export default function ServiceCard({
       >
         En savoir plus
       </span>
-    </a>
+    </Link>
   );
 }
-
