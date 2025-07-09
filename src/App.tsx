@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import HelpCard from "./components/HelpCard";
 
 function ServiceCard({
   icon,
@@ -42,6 +43,9 @@ export function App() {
             title="Installation & dépannage"
             description="Installation, configuration et résolution de problèmes informatiques."
           />
+        </div>
+        <div>
+          <HelpCard />
         </div>
       </section>
 
