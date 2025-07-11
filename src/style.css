@@ -1,6 +1,9 @@
 .service-card:hover .btn-more {
-  background-color: #e5e7eb; /* bg-gray-200 */
+  background-color: #727375; /* gris foncé personnalisé */
+  color: white; /* ← texte blanc au survol */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 @keyframes fadeInUp {
   from {

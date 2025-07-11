@@ -6,7 +6,7 @@ import ScrollToTopButton from "./ScrollToTopButton";
 
 export default function DemarchesEnLigne() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-sans">
+    <div className="flex flex-col min-h-screen  text-gray-800 font-sans">
       <Header />
 
       <div className="w-full p-8">

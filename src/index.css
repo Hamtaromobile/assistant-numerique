@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body::before {
+body.home::before {
   content: "";
   position: fixed;
   top: 0;
@@ -22,6 +22,39 @@ body::before {
   animation-duration: auto;
 }
 
+body.soutien-informatique {
+  background-image: url("/images/background1.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body.demarches-en-ligne {
+  background-image: url("/images/background2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body.installation-depannage {
+  background-image: url("/images/background2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body.credit-impot {
+  background-image: url("/images/bg-credit.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+
 @keyframes scrollParallax {
   0% {
     transform: translateY(0);
@@ -30,3 +63,4 @@ body::before {
     transform: translateY(-20%);
   }
 }
+
