@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import MapComponent from "./components/MapComponent";
+import MapWindow from "./components/MapWindow";
 import ServiceCard from "./components/ServiceCard";
 import { FaCarSide } from "react-icons/fa";
 import SoutienInformatique from "./components/SoutienInformatique";
@@ -40,43 +40,70 @@ export function App() {
         <Route
           path="/"
           element={
-            <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
+            <div className="min-h-screen text-gray-800 font-sans">
               <Header />
               <main className="p-8">
                 <ScrollToTopButton/>
-                <h2 className="text-3xl font-extrabold text-blue-700 text-center mb-8 drop-shadow-md flex items-center justify-center gap-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-8 h-8 text-blue-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 1010 10A10 10 0 0012 2z"
-                    />
-                  </svg>
-                  Mes services
-                </h2>
+                
+               <section className="flex flex-col items-center mt-20">
+                  {/* Titre en dehors de l'écran flou */}
+                  <h2 className="text-3xl font-extrabold text-blue-700 text-center mb-8 drop-shadow-md flex items-center justify-center gap-3">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-8 h-8 text-blue-500"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                          >
+                                            <path
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
+                                              d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 1010 10A10 10 0 0012 2z"
+                                            />
+                                          </svg>
+                                          Mes services
+                                        </h2>
 
-                <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
-                  {cardsData.map((card, i, arr) => {
-                    const delay = (arr.length - 1 - i) * 0.5;
-                    return (
-                      <ServiceCard
-                        key={i}
-                        icon={card.icon}
-                        title={card.title}
-                        description={card.description}
-                        href={card.href}
-                        style={{ animationDelay: `${delay}s` }}
-                      />
-                    );
-                  })}
-                </div>
+                  {/* Châssis de l'écran */}
+                  <div className="relative bg-gray-900 rounded-xl p-2 shadow-2xl w-full max-w-6xl">
+
+                    {/* Écran avec image de fond */}
+                    <div
+                      className="relative rounded-lg overflow-hidden min-h-[400px] bg-cover bg-center bg-no-repeat"
+                      style={{
+                        backgroundImage: `url('/images/windows.jpg')`, // Remplace avec ton chemin réel
+                      }}
+                    >
+                      {/* Voile de lisibilité */}
+                      <div className="absolute inset-0 bg-blue-100/30 backdrop-blur-sm rounded-lg" />
+
+                      {/* Contenu visible */}
+                      <div className="relative z-10 p-8">
+                        <div className="flex flex-wrap justify-center gap-8">
+                          {cardsData.map((card, i, arr) => {
+                            const delay = (arr.length - 1 - i) * 0.5;
+                            return (
+                              <ServiceCard
+                                key={i}
+                                icon={card.icon}
+                                title={card.title}
+                                description={card.description}
+                                href={card.href}
+                                style={{ animationDelay: `${delay}s` }}
+                              />
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Pied de l'écran */}
+                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-24 h-3 bg-gray-700 rounded-md shadow-md" />
+                    <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-48 h-2 bg-gray-500 rounded-full blur-sm opacity-30" />
+                  </div>
+                </section>
+
 
                 <section className="mt-16 opacity-0 translate-y-4 animate-fade-in-up animation-delay-600">
                   <h2 className="text-3xl font-extrabold text-blue-700 text-center mb-8 drop-shadow-md flex items-center justify-center gap-3">
@@ -85,7 +112,7 @@ export function App() {
                   </h2>
 
                   <div className="max-w-4xl mx-auto">
-                    <MapComponent />
+                    <MapWindow />
                   </div>
                 </section>
 

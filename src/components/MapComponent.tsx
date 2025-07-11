@@ -1,31 +1,32 @@
 import { GoogleMap, LoadScript, Polygon, Circle } from "@react-google-maps/api";
 
-// Taille de la carte : rectangle centré avec bordures
-const containerStyle = {
-  width: "100%",
-  maxWidth: "1000px",
-  height: "550px",
-  margin: "0 auto",
-  borderRadius: "12px",
-  overflow: "hidden",
-  boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)",
-};
+interface MapComponentProps {
+  isMaximized?: boolean;  // ajoute cette interface
+}
 
-// Coordonnées légèrement au sud de Saint-Marceau pour recentrer la vue
-const center = {
-  lat: 48.145, // <- avant c'était 48.1623
-  lng: 0.0025,
-};
+export default function MapComponent({ isMaximized = false }: MapComponentProps) {
+  const containerStyle = {
+    width: "100%",
+    maxWidth: isMaximized ? "100%" : "1000px",
+    height: isMaximized ? "80vh" : "550px",
+    margin: "0 auto",
+    borderRadius: "12px",
+    overflow: "hidden",
+    boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)",
+  };
 
-// Polygone de démo optionnel
-const polygonCoords = [
-  { lat: 48.165, lng: -0.005 },
-  { lat: 48.165, lng: 0.010 },
-  { lat: 48.158, lng: 0.010 },
-  { lat: 48.158, lng: -0.005 },
-];
+  const center = {
+    lat: 48.145,
+    lng: 0.0025,
+  };
 
-export default function MapComponent() {
+  const polygonCoords = [
+    { lat: 48.165, lng: -0.005 },
+    { lat: 48.165, lng: 0.010 },
+    { lat: 48.158, lng: 0.010 },
+    { lat: 48.158, lng: -0.005 },
+  ];
+
   return (
     <LoadScript googleMapsApiKey="AIzaSyCSiwf_VnbGFasBRdas8WLd5r46A2K7x7o">
       <div style={containerStyle}>
@@ -34,7 +35,6 @@ export default function MapComponent() {
           center={center}
           zoom={10}
         >
-          {/* Polygone facultatif */}
           <Polygon
             paths={polygonCoords}
             options={{
@@ -45,10 +45,8 @@ export default function MapComponent() {
               strokeWeight: 2,
             }}
           />
-
-          {/* Cercle de 20 km */}
           <Circle
-            center={{ lat: 48.1623, lng: 0.0025 }} // le cercle reste centré sur Saint-Marceau
+            center={{ lat: 48.1623, lng: 0.0025 }}
             radius={25000}
             options={{
               fillColor: "rgba(66, 135, 245, 0.2)",
