@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import BackButton from "./BackButton";
 import ScrollToTopButton from "./ScrollToTopButton";
+import ScreenFrame from "./ScreenFrame";
 
 export default function DemarchesEnLigne() {
   return (
@@ -18,7 +19,7 @@ export default function DemarchesEnLigne() {
         <h1 className="text-3xl font-extrabold text-blue-700 mb-6">
           Démarches en ligne
         </h1>
-
+        <ScreenFrame>
         <section className="bg-gray-100 p-6 rounded-xl shadow-md mb-8">
           <h2 className="text-2xl font-semibold mb-2">💻 Accompagnement numérique personnalisé</h2>
           <p>
@@ -46,19 +47,34 @@ export default function DemarchesEnLigne() {
         </section>
 
         <section className="bg-blue-50 p-6 rounded-xl shadow mt-8 text-center">
-          <h2 className="text-xl font-semibold mb-2">💶 Tarifs & déplacement</h2>
-          <p>
-            Mon tarif est de <strong>50 € de l’heure</strong>, avec une intervention à domicile dans le secteur de Saint-Marceau (72) et alentours.
+          <h2 className="text-xl font-semibold mb-4">💶 Tarifs & zone d’intervention</h2>
+          <p className="text-gray-800 mb-2">
+            Je propose un accompagnement informatique personnalisé, à votre domicile, au tarif de <strong>50 € de l’heure</strong>.
+            Chaque intervention est réalisée avec <span className="font-semibold text-blue-700">patience</span>, 
+            <span className="font-semibold text-blue-700"> pédagogie</span> et <span className="font-semibold text-blue-700">bienveillance</span>,
+            pour vous offrir un service sur-mesure, adapté à vos besoins.
           </p>
-          <p className="mt-2">
-            Grâce au <Link to="/credit-impot" className="text-blue-700 font-semibold hover:underline">
+          <p className="mt-4 text-gray-800">
+            🧾 Grâce au{" "}
+            <Link to="/credit-impot" className="text-blue-800 font-semibold hover:underline">
               crédit d’impôt de 50 %
             </Link>, vous ne payez en réalité que <strong>25 € de l’heure</strong> après déclaration.
           </p>
-          <p className="mt-2">
-            Je me déplace gratuitement dans un rayon de 25 km autour de Saint-Marceau.
+          <p className="mt-4 text-gray-800">
+            📍 Je me déplace gratuitement dans un rayon de <strong>25 km autour de Saint-Marceau (72)</strong>.
           </p>
+           <div className="mt-6 flex justify-center items-center flex-col">
+          <img 
+            src="/images/Traceur_SAP_buro_rvb_png.png" 
+            alt="Logo Service à la Personne" 
+            className="h-16 mb-2"
+          />
+          <p className="text-sm text-gray-600 italic">
+            Agréé Service à la Personne – bénéficiez du crédit d’impôt
+          </p>
+        </div>
         </section>
+        </ScreenFrame>
       </main>
 
       <Footer />

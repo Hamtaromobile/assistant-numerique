@@ -1,10 +1,24 @@
+import { useState, useEffect } from "react";
 import { GoogleMap, LoadScript, Polygon, Circle } from "@react-google-maps/api";
 
 interface MapComponentProps {
-  isMaximized?: boolean;  // ajoute cette interface
+  isMaximized?: boolean;
 }
 
 export default function MapComponent({ isMaximized = false }: MapComponentProps) {
+  const [zoomLevel, setZoomLevel] = useState(10); // niveau de zoom par défaut
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+
+    // Ajuste le zoom si largeur < 768px (mobile)
+    if (screenWidth < 768) {
+      setZoomLevel(9.3); // zoom plus éloigné pour tout voir
+    } else {
+      setZoomLevel(10); // zoom standard sur desktop
+    }
+  }, []);
+
   const containerStyle = {
     width: "100%",
     maxWidth: isMaximized ? "100%" : "1000px",
@@ -33,7 +47,7 @@ export default function MapComponent({ isMaximized = false }: MapComponentProps)
         <GoogleMap
           mapContainerStyle={{ width: "100%", height: "100%" }}
           center={center}
-          zoom={10}
+          zoom={zoomLevel}
         >
           <Polygon
             paths={polygonCoords}

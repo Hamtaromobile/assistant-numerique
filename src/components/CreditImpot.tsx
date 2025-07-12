@@ -51,8 +51,11 @@ export default function CreditImpot() {
             <li>Vous recevez un <strong>remboursement de 50 %</strong> du montant total.</li>
           </ol>
           <p className="mt-4">
-            <strong>Exemple :</strong> une intervention de 100 € → vous êtes remboursé 50 € → coût réel : 50 €.
+            <strong>Exemple concret :</strong> une consultation à domicile facturée 50 € pour de l’assistance informatique personnalisée
+            → vous êtes remboursé de <strong>25 €</strong> par l’administration fiscale
+            → <span className="text-blue-700 font-semibold">coût réel pour vous : seulement 25 €</span>.
           </p>
+
         </section>
 
         <section className="bg-blue-50 p-6 rounded-xl shadow text-center">
