@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Maximize2, Minimize2 } from "lucide-react";
 import MapComponent from "./MapComponent";
 
 const MapWindow: React.FC = () => {
@@ -8,31 +9,25 @@ const MapWindow: React.FC = () => {
   return (
     <div
       className={`
-        mx-auto mt-10 rounded-lg shadow-lg border border-gray-300 bg-white overflow-hidden flex flex-col
+        mx-auto mt-10 rounded-xl shadow-2xl border border-gray-300 bg-white overflow-hidden flex flex-col transition-all duration-300
         ${isMaximized ? "fixed inset-0 z-50 rounded-none" : "max-w-4xl"}
       `}
       style={{ height: isMaximized ? "100vh" : "auto" }}
     >
-      {/* Barre de titre */}
-      <div className="flex items-center justify-between bg-gray-100 px-4 py-2 border-b border-gray-300 select-none">
-        <h3 className="text-gray-700 font-semibold">Map Application</h3>
-        <div className="flex space-x-2">
-          {/* Boutons style MacOS : rouge et jaune désactivés, vert actif */}
-          <button
-            aria-label="Fermer (désactivé)"
-            className="w-3 h-3 rounded-full bg-red-500 opacity-50 cursor-not-allowed"
-            disabled
-          />
-          <button
-            aria-label="Minimiser (désactivé)"
-            className="w-3 h-3 rounded-full bg-yellow-400 opacity-50 cursor-not-allowed"
-            disabled
-          />
+      {/* Barre de titre stylisée */}
+      <div className="flex items-center justify-between bg-gradient-to-r from-gray-200 via-gray-100 to-white px-4 py-3 border-b border-gray-300 select-none">
+        <h3 className="text-gray-700 font-semibold text-sm uppercase tracking-wide">
+          Carte interactive
+        </h3>
+        <div className="flex items-center">
+          {/* Bouton agrandir/réduire */}
           <button
             aria-label={isMaximized ? "Réduire" : "Agrandir"}
-            className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 focus:outline-none"
             onClick={() => setIsMaximized(!isMaximized)}
-          />
+            className="p-1 rounded hover:bg-green-100 text-green-600 transition"
+          >
+            {isMaximized ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+          </button>
         </div>
       </div>
 

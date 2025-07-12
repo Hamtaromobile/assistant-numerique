@@ -5,7 +5,7 @@ import MapWindow from "./components/MapWindow";
 import ServiceCard from "./components/ServiceCard";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import { FaCarSide, FaMap } from "react-icons/fa";
-
+import { PiMapPinLineDuotone } from "react-icons/pi"
 import SoutienInformatique from "./components/SoutienInformatique";
 import DemarchesEnLigne from "./components/DemarchesEnLigne";
 import InstallationDepannage from "./components/InstallationDepannage";
@@ -55,6 +55,7 @@ export function App() {
             <div className="min-h-screen text-gray-800 font-sans">
               <Header />
               <main className="p-8">
+                
                 <ScrollToTopButton />
 
                 <section className="flex flex-col items-center mt-20">
@@ -117,27 +118,66 @@ export function App() {
                   </div>
                 </section>
 
-                <section className="mt-16 bg-blue-50 rounded-xl shadow-md p-6 max-w-4xl mx-auto transition-shadow hover:shadow-lg flex items-start gap-4">
-                  <FaMap className="h-8 w-8 text-blue-700 flex-shrink-0 mt-1" />
+               <section className="mt-16 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-md p-8 max-w-4xl mx-auto transition-shadow hover:shadow-xl flex items-start gap-6">
+                  <div className="bg-blue-100 p-4 rounded-full shadow-sm">
+                    <PiMapPinLineDuotone className="h-8 w-8 text-blue-600" />
+                  </div>
+
                   <div>
-                    <h2 className="text-xl font-semibold text-blue-700 mb-3">
-                      Périmètre d’activité
+                    <h2 className="text-2xl font-bold text-gray-800 mb-2 tracking-wide">
+                      Périmètre d’intervention
                     </h2>
-                    <p className="text-gray-700 leading-relaxed">
-                      J’interviens principalement dans le nord de la Sarthe (72), autour de
-                      Beaumont-sur-Sarthe, Saint-Marceau, Sillé-le-Guillaume,
-                      Fresnay-sur-Sarthe et leurs environs.
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      J’interviens principalement dans le nord de la Sarthe (72), autour de&nbsp;
+                      <strong>Beaumont-sur-Sarthe</strong>, <strong>Saint-Marceau</strong>, <strong>Sillé-le-Guillaume</strong>,
+                      <strong> Fresnay-sur-Sarthe</strong> et leurs environs, ainsi que sur <strong>Le Mans</strong>.
                     </p>
                   </div>
                 </section>
 
-                <section className="bg-white p-8 text-center mt-16">
-                  <h2 className="text-2xl font-semibold mb-4">À propos</h2>
-                  <p className="max-w-3xl mx-auto">
-                    Passionné d’informatique, j’accompagne les particuliers — notamment les
-                    seniors — pour leur simplifier la vie numérique, à leur rythme, avec
-                    bienveillance.
-                  </p>
+                <section className="py-16 px-6 mt-16">
+                  <div className="max-w-5xl mx-auto grid md:grid-cols-3 items-center gap-10 border border-gray-200 rounded-2xl shadow-md p-6 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+                    
+                      {/* Photo de profil */}
+                      <div className="flex justify-center md:justify-start">
+                    <div className="relative w-40 h-40 bg-gray-200 rounded-lg shadow-inner border border-gray-300 flex items-center justify-center">
+                      {/* Objectif circulaire */}
+                      <div className="w-28 h-28 bg-black rounded-full flex items-center justify-center border-4 border-gray-600">
+                        <img
+                          src="/chemin-vers-ta-photo.jpg"
+                          alt="Photo de moi"
+                          className="w-24 h-24 rounded-full object-cover border-2 border-white shadow-md"
+                        />
+                      </div>
+
+                      {/* Flash (en haut à droite) */}
+                      <div className="absolute top-2 right-3 w-4 h-4 rounded-sm bg-gray-400 border border-gray-500 shadow-sm"></div>
+
+                      {/* Viseur (en haut à gauche) */}
+                      <div className="absolute top-2 left-3 w-6 h-4 rounded-sm bg-gray-400 border border-gray-500 shadow-sm"></div>
+
+                      {/* Petit bouton déco (en haut au centre) */}
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-2 bg-gray-500 rounded-t"></div>
+                    </div>
+                  </div>
+
+
+                    {/* Ligne de séparation mobile */}
+                    <div className="block md:hidden border-t border-gray-300 my-6 md:my-0"></div>
+
+                    {/* Texte */}
+                    <div className="md:col-span-2">
+                      <h2 className="text-2xl font-bold text-gray-800 mb-4 tracking-wide">
+                        À propos de moi
+                      </h2>
+                      <p className="text-lg text-gray-700 leading-relaxed">
+                        Passionné d’informatique, j’accompagne les particuliers — notamment les
+                        <span className="text-blue-600 font-semibold"> seniors</span> — pour leur
+                        simplifier la vie numérique, à leur rythme, avec
+                        <span className="text-blue-600 font-semibold"> pédagogie et bienveillance</span>.
+                      </p>
+                    </div>
+                  </div>
                 </section>
 
                 <section className="bg-blue-100 p-8 text-center mt-16">
