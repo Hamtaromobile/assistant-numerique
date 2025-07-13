@@ -1,11 +1,19 @@
+import { useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import BackButton from "./BackButton";
 import ScrollToTopButton from "./ScrollToTopButton";
 
 export default function CreditImpot() {
+  useEffect(() => {
+    document.body.classList.add("credit-impot");
+    return () => {
+      document.body.classList.remove("credit-impot");
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 font-sans flex flex-col">
+    <div className="min-h-screen text-gray-800 font-sans flex flex-col">
       <Header />
        <div className="w-full p-8">
            <BackButton />

@@ -65,7 +65,7 @@ export default function DemarchesEnLigne() {
           </p>
            <div className="mt-6 flex justify-center items-center flex-col">
           <img 
-            src="/images/Traceur_SAP_buro_rvb_png.png" 
+            src="/images/logoSAP.webp" 
             alt="Logo Service à la Personne" 
             className="h-16 mb-2"
           />

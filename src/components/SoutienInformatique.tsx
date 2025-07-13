@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import BackButton from "./BackButton";
 import ScrollToTopButton from "./ScrollToTopButton";
+import ScreenFrame from "./ScreenFrame";
 
 export default function SoutienInformatique() {
   return (
@@ -15,11 +16,11 @@ export default function SoutienInformatique() {
 
       <main className="p-8 max-w-4xl mx-auto w-full grow">
         <ScrollToTopButton />
-
+        
         <h1 className="text-3xl font-extrabold text-blue-700 mb-6">
           Soutien informatique à domicile
         </h1>
-
+        <ScreenFrame>
         <section className="bg-gray-100 p-6 rounded-xl shadow-md mb-8">
           <h2 className="text-2xl font-semibold mb-2">💻 Accompagnement personnalisé</h2>
           <p>
@@ -59,7 +60,7 @@ export default function SoutienInformatique() {
           </p>
            <div className="mt-6 flex justify-center items-center flex-col">
           <img 
-            src="/images/Traceur_SAP_buro_rvb_png.png" 
+            src="/images/logoSAP.webp" 
             alt="Logo Service à la Personne" 
             className="h-16 mb-2"
           />
@@ -68,6 +69,7 @@ export default function SoutienInformatique() {
           </p>
         </div>
         </section>
+        </ScreenFrame>
       </main>
 
       <Footer />

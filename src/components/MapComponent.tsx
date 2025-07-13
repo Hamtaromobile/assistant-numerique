@@ -6,33 +6,18 @@ interface MapComponentProps {
 }
 
 export default function MapComponent({ isMaximized = false }: MapComponentProps) {
-  const [zoomLevel, setZoomLevel] = useState(10); // niveau de zoom par défaut
+  const [zoomLevel, setZoomLevel] = useState(10);
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
-
-    // Ajuste le zoom si largeur < 768px (mobile)
     if (screenWidth < 768) {
-      setZoomLevel(9.3); // zoom plus éloigné pour tout voir
+      setZoomLevel(9.3);
     } else {
-      setZoomLevel(10); // zoom standard sur desktop
+      setZoomLevel(10);
     }
   }, []);
 
-  const containerStyle = {
-    width: "100%",
-    maxWidth: isMaximized ? "100%" : "1000px",
-    height: isMaximized ? "80vh" : "550px",
-    margin: "0 auto",
-    borderRadius: "12px",
-    overflow: "hidden",
-    boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)",
-  };
-
-  const center = {
-    lat: 48.145,
-    lng: 0.0025,
-  };
+  const center = { lat: 48.145, lng: 0.0025 };
 
   const polygonCoords = [
     { lat: 48.165, lng: -0.005 },
@@ -43,7 +28,11 @@ export default function MapComponent({ isMaximized = false }: MapComponentProps)
 
   return (
     <LoadScript googleMapsApiKey="AIzaSyCSiwf_VnbGFasBRdas8WLd5r46A2K7x7o">
-      <div style={containerStyle}>
+      <div
+        className={`w-full ${
+          isMaximized ? "max-w-full h-[80vh]" : "max-w-[1000px] h-[550px]"
+        } mx-auto rounded-xl overflow-hidden shadow-md`}
+      >
         <GoogleMap
           mapContainerStyle={{ width: "100%", height: "100%" }}
           center={center}
