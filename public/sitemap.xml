@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://tonsite.fr/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://tonsite.fr/soutien-informatique</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://tonsite.fr/demarches-en-ligne</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://tonsite.fr/installation-depannage</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://tonsite.fr/credit-impot</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

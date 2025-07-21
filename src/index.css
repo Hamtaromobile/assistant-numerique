@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body.home::before {
+/*body.home::before {
   content: "";
   position: fixed;
   top: 0;
@@ -11,7 +11,7 @@ body.home::before {
   width: 100%;
   background-image: url("/images/backgroundAccueil.webp");
   background-size: cover;
-  background-position: center top;
+  background-position: center bottom;
   background-repeat: no-repeat;
   transform: translateZ(0);
   z-index: -1;
@@ -20,7 +20,7 @@ body.home::before {
   animation: scrollParallax linear;
   animation-timeline: scroll();
   animation-duration: auto;
-}
+}*/
 
 body.soutien-informatique {
   background-image: url("/images/backgroundCards.webp");
