@@ -135,33 +135,38 @@ export function App() {
                 </section>
 
                 {/* === À propos de moi === */}
-                <section className="py-16 px-6 mt-16">
-                  <div className="max-w-5xl mx-auto grid md:grid-cols-3 items-center gap-10 border border-gray-200 rounded-2xl shadow-md p-6 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+
+                <section className="py-20 px-6 mt-16">
+                  <div className="max-w-5xl mx-auto grid gap-10 md:grid-cols-3 items-center border border-gray-200 rounded-3xl shadow-lg p-8 bg-white">
+                    
                     {/* Photo */}
                     <div className="flex justify-center md:justify-start">
-                      <div className="relative w-40 h-40 bg-gray-200 rounded-lg shadow-inner border border-gray-300 flex items-center justify-center">
-                        <div className="w-28 h-28 bg-black rounded-full flex items-center justify-center border-4 border-gray-600">
-                          <img
-                            src="/chemin-vers-ta-photo.jpg"
-                            alt="Photo de moi"
-                            className="w-24 h-24 rounded-full object-cover border-2 border-white shadow-md"
-                          />
-                        </div>
-                        <div className="absolute top-2 right-3 w-4 h-4 rounded-sm bg-gray-400 border border-gray-500 shadow-sm" />
-                        <div className="absolute top-2 left-3 w-6 h-4 rounded-sm bg-gray-400 border border-gray-500 shadow-sm" />
-                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-2 bg-gray-500 rounded-t" />
+                      <div className="w-44 h-44 rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-300 transition-transform duration-300 hover:scale-105">
+                        <img
+                          src="/chemin-vers-ta-photo.jpg"
+                          alt="Portrait de [Ton prénom]"
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          decoding="async"
+                        />
                       </div>
                     </div>
 
                     {/* Texte */}
-                    <div className="md:col-span-2">
-                      <h2 className="text-2xl font-bold text-gray-800 mb-4 tracking-wide">À propos de moi</h2>
+                    <div className="md:col-span-2 space-y-6">
+                      <h2 className="text-3xl font-semibold text-blue-600 tracking-tight">À propos de moi</h2>
                       <p className="text-lg text-gray-700 leading-relaxed">
-                        Passionné d’informatique, j’accompagne les particuliers — notamment les
-                        <span className="text-blue-600 font-semibold"> seniors</span> — pour leur simplifier la vie numérique, à leur rythme, avec
-                        <span className="text-blue-600 font-semibold"> pédagogie et bienveillance</span>.
+                        Passionné par le numérique, je mets mes <span className="text-blue-600 font-semibold">compétences informatiques</span> au service de toutes et tous, 
+                        avec pour priorité la <span className="text-blue-600 font-semibold">clarté</span> et la <span className="text-blue-600 font-semibold">bienveillance</span>.
+                      </p>
+                      <p className="text-lg text-gray-700 leading-relaxed">
+                        J’interviens directement à domicile pour <strong>simplifier</strong> votre relation au numérique, en respectant votre rythme et vos besoins, avec toujours beaucoup <span className="text-blue-600 font-semibold">d’écoute</span> et de <span className="text-blue-600 font-semibold">pédagogie</span>.
+                      </p>
+                      <p className="text-lg text-gray-700 leading-relaxed italic">
+                        « Votre allié pour un numérique accessible et serein au quotidien. »
                       </p>
                     </div>
+
                   </div>
                 </section>
 
