@@ -97,10 +97,6 @@ export default function Header() {
             )}
           </div>
 
-          <Link to="/credit-impot" onClick={() => setIsOpen(false)} className="hover:underline">
-            Crédit d’impôt
-          </Link>
-
           <a href="tel:+33675418360" className="hover:underline">
             📞 06 75 41 83 60
           </a>
