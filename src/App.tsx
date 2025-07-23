@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -7,7 +7,7 @@ import ServiceCard from "./components/ServiceCard";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import { FaCarSide } from "react-icons/fa";
 import { PiMapPinLineDuotone } from "react-icons/pi";
-
+import MentionsLegales from "./components/MentionsLegales"; 
 import SoutienInformatique from "./components/SoutienInformatique";
 import DemarchesEnLigne from "./components/DemarchesEnLigne";
 import InstallationDepannage from "./components/InstallationDepannage";
@@ -93,7 +93,7 @@ export function App() {
                           />
                         ))}
                       </div>
-                    //</BackgroundImageWindow>
+                    </BackgroundImageWindow>
 
                     {/* Ornement */}
                     <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-24 h-3 bg-gray-700 rounded-md shadow-md" />
@@ -134,9 +134,12 @@ export function App() {
                   </div>
                 </section>
 
-                {/* === À propos de moi === */}
+                {/* Séparation */}
+               <div className="my-24 border-t border-gray-300 w-full max-w-5xl mx-auto" />
 
-                <section className="py-20 px-6 mt-16">
+
+                {/* === À propos de moi === */}
+                <section >
                   <div className="max-w-5xl mx-auto grid gap-10 md:grid-cols-3 items-center border border-gray-200 rounded-3xl shadow-lg p-8 bg-white">
                     
                     {/* Photo */}
@@ -162,20 +165,11 @@ export function App() {
                       <p className="text-lg text-gray-700 leading-relaxed">
                         J’interviens directement à domicile pour <strong>simplifier</strong> votre relation au numérique, en respectant votre rythme et vos besoins, avec toujours beaucoup <span className="text-blue-600 font-semibold">d’écoute</span> et de <span className="text-blue-600 font-semibold">pédagogie</span>.
                       </p>
-                      <p className="text-lg text-gray-700 leading-relaxed italic">
-                        « Votre allié pour un numérique accessible et serein au quotidien. »
-                      </p>
                     </div>
 
                   </div>
                 </section>
 
-                {/* === Contact === */}
-                <section className="bg-blue-100 p-8 text-center mt-16">
-                  <h2 className="text-2xl font-semibold mb-4">Contact</h2>
-                  <p>📞 06 75 41 83 60</p>
-                  <p>📧 contact@example.com</p>
-                </section>
               </main>
 
               <Footer />
@@ -186,6 +180,7 @@ export function App() {
         <Route path="/demarches-en-ligne" element={<DemarchesEnLigne />} />
         <Route path="/installation-depannage" element={<InstallationDepannage />} />
         <Route path="/credit-impot" element={<CreditImpot />} />
+        <Route path="/mentions-legales" element={<MentionsLegales />} />
       </Routes>
     </Router>
   );

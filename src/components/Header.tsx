@@ -3,11 +3,10 @@ import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false); // menu mobile
-  const [dropdownOpen, setDropdownOpen] = useState(false); // sous-menu "mes services"
+  const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Fermer le menu "Mes services" si clic à l’extérieur
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -20,9 +19,10 @@ export default function Header() {
 
   return (
     <header className="bg-blue-900 text-white p-6 shadow-xl border-b-4 border-blue-700 rounded-b-xl">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between">
+        
         {/* Logo + bouton mobile */}
-        <div className="flex justify-between items-center w-full md:w-auto">
+        <div className="flex justify-between items-center w-full lg:w-auto">
           <div>
             <h1 className="text-3xl font-bold drop-shadow-md">
               <Link to="/" className="hover:text-blue-300 transition-colors">
@@ -34,7 +34,7 @@ export default function Header() {
             </p>
           </div>
           <button
-            className="md:hidden text-white"
+            className="lg:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Ouvrir le menu"
           >
@@ -46,7 +46,7 @@ export default function Header() {
         <nav
           className={`${
             isOpen ? "flex" : "hidden"
-          } flex-col md:flex md:flex-row items-center mt-4 md:mt-0 gap-4 md:gap-8 font-semibold text-lg relative`}
+          } flex-col lg:flex lg:flex-row items-center mt-4 lg:mt-0 gap-4 lg:gap-8 font-semibold text-lg relative`}
         >
           <Link to="/" onClick={() => setIsOpen(false)} className="hover:underline">
             Accueil
@@ -62,7 +62,7 @@ export default function Header() {
             </button>
 
             {dropdownOpen && (
-              <div className="absolute left-0 md:left-auto md:right-0 top-full mt-2 bg-white text-blue-900 rounded shadow-lg z-50 w-64 border border-gray-200">
+              <div className="absolute left-0 lg:left-auto lg:right-0 top-full mt-2 bg-white text-blue-900 rounded shadow-lg z-50 w-64 border border-gray-200">
                 <Link
                   to="/soutien-informatique"
                   className="block px-4 py-2 hover:bg-blue-100"
