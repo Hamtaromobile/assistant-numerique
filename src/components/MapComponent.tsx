@@ -17,13 +17,15 @@ export default function MapComponent({ isMaximized = false }: MapComponentProps)
     }
   }, []);
 
-  const center = { lat: 48.145, lng: 0.0025 };
+  // centre exact de la map
+  const center = { lat: 48.17883, lng: 0.12713 };
 
+  // carré (polygon) centré autour du centre, ici un carré d'environ 0.007 de côté
   const polygonCoords = [
-    { lat: 48.165, lng: -0.005 },
-    { lat: 48.165, lng: 0.010 },
-    { lat: 48.158, lng: 0.010 },
-    { lat: 48.158, lng: -0.005 },
+    { lat: center.lat + 0.0035, lng: center.lng - 0.005 },
+    { lat: center.lat + 0.0035, lng: center.lng + 0.005 },
+    { lat: center.lat - 0.0035, lng: center.lng + 0.005 },
+    { lat: center.lat - 0.0035, lng: center.lng - 0.005 },
   ];
 
   return (
@@ -49,7 +51,7 @@ export default function MapComponent({ isMaximized = false }: MapComponentProps)
             }}
           />
           <Circle
-            center={{ lat: 48.1623, lng: 0.0025 }}
+            center={center}
             radius={25000}
             options={{
               fillColor: "rgba(66, 135, 245, 0.2)",

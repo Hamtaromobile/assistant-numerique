@@ -36,7 +36,8 @@ export default function Header() {
           <button
             className="lg:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Ouvrir le menu"
+            aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -57,6 +58,9 @@ export default function Header() {
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
               className="flex items-center gap-1 hover:underline focus:outline-none"
+              aria-haspopup="true"
+              aria-expanded={dropdownOpen}
+              aria-label="Menu Mes services"
             >
               Mes services <ChevronDown size={18} />
             </button>
@@ -100,8 +104,8 @@ export default function Header() {
           <a href="tel:+33675418360" className="hover:underline">
             📞 06 75 41 83 60
           </a>
-          <a href="mailto:contact@example.com" className="hover:underline">
-            📧 contact@example.com
+          <a href="mailto:antoine.informatique72@gmail.com" className="hover:underline">
+            📧 antoine.informatique72@gmail.com
           </a>
         </nav>
       </div>

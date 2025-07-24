@@ -27,19 +27,19 @@ function BodyClassController() {
 
 const cardsData = [
   {
-    icon: "💻",
+    icon: <span aria-hidden="true">💻</span>,
     title: "Soutien informatique",
     description: "Aide personnalisée à domicile pour tous vos appareils.",
     href: "/soutien-informatique",
   },
   {
-    icon: "🌐",
+    icon: <span aria-hidden="true">🌐</span>,
     title: "Démarches en ligne",
     description: "Je vous accompagne dans vos démarches administratives numériques.",
     href: "/demarches-en-ligne",
   },
   {
-    icon: "🔧",
+    icon: <span aria-hidden="true">🔧</span>,
     title: "Installation & dépannage",
     description: "Installation, configuration et résolution de problèmes informatiques.",
     href: "/installation-depannage",

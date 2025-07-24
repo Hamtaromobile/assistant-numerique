@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Coordonnées */}
         <p>
           📞 <a href="tel:0675418360" className="underline hover:text-blue-300">06 75 41 83 60</a> — 
-          📧 <a href="mailto:contact@example.com" className="underline hover:text-blue-300">contact@example.com</a>
+          📧 <a href="mailto:antoine.informatique72@gmail.com" className="underline hover:text-blue-300">antoine.informatique72@gmail.com</a>
         </p>
 
         {/* Mentions légales ou lien admin si besoin */}

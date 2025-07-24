@@ -31,7 +31,7 @@ export default function MentionsLegales() {
               <li><strong>Numéro SIRET :</strong> 123 456 789 00012</li>
               <li><strong>Adresse :</strong> 12 rue de la République, 72000 Le Mans</li>
               <li><strong>Responsable de publication :</strong> Antoine Lozach</li>
-              <li><strong>Contact :</strong> contact@example.com - 06 75 41 83 60</li>
+              <li><strong>Contact :</strong> antoine.informatique72@gmail.com - 06 75 41 83 60</li>
             </ul>
           </section>
 
