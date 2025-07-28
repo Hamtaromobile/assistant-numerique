@@ -15,38 +15,46 @@ import CreditImpot from "./components/CreditImpot";
 import BackgroundParallax from "./components/BackgroundParallax";
 import BackgroundImageWindow from "./components/BackgroundImageWindow";
 import { useBodyClass } from "./components/useBodyClass";
+import { useEffect, useState } from "react";
 
-// Lazy loading de MapWindow
 const MapWindow = lazy(() => import("./components/MapWindow"));
 
-// Classe body dynamique
 function BodyClassController() {
   useBodyClass();
   return null;
 }
 
-const cardsData = [
-  {
-    icon: <span aria-hidden="true">💻</span>,
-    title: "Soutien informatique",
-    description: "Aide personnalisée à domicile pour tous vos appareils.",
-    href: "/soutien-informatique",
-  },
-  {
-    icon: <span aria-hidden="true">🌐</span>,
-    title: "Démarches en ligne",
-    description: "Je vous accompagne dans vos démarches administratives numériques.",
-    href: "/demarches-en-ligne",
-  },
-  {
-    icon: <span aria-hidden="true">🔧</span>,
-    title: "Installation & dépannage",
-    description: "Installation, configuration et résolution de problèmes informatiques.",
-    href: "/installation-depannage",
-  },
-];
-
 export function App() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 640);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const cardsData = [
+    {
+      icon: <span aria-hidden="true">💻</span>,
+      title: isMobile ? "Soutien informatique tout appareil" : "Soutien informatique",
+      description: isMobile ? "" : "Aide personnalisée à domicile pour tous vos appareils.",
+      href: "/soutien-informatique",
+    },
+    {
+      icon: <span aria-hidden="true">🌐</span>,
+      title: isMobile ? "Démarches administratives en ligne" : "Démarches en ligne",
+      description: isMobile ? "" : "Je vous accompagne dans vos démarches administratives numériques.",
+      href: "/demarches-en-ligne",
+    },
+    {
+      icon: <span aria-hidden="true">🔧</span>,
+      title: isMobile ? "Installation & dépannage " : "Installation & dépannage",
+      description: isMobile ? "" : "Installation, configuration et résolution de problèmes informatiques.",
+      href: "/installation-depannage",
+    },
+  ];
+
   return (
     <Router>
       <BodyClassController />
@@ -60,8 +68,7 @@ export function App() {
               <Header />
 
               <main className="p-8 relative z-10">
-                {/* === Section Services === */}
-                <section className="flex flex-col items-center mt-20">
+                <section className={`flex flex-col items-center ${isMobile ? "mt-4" : "mt-20"}`}>
                   <h2 className="text-3xl font-extrabold text-blue-700 text-center mb-8 drop-shadow-md flex items-center justify-center gap-3">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -95,16 +102,13 @@ export function App() {
                       </div>
                     </BackgroundImageWindow>
 
-                    {/* Ornement */}
                     <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-24 h-3 bg-gray-700 rounded-md shadow-md" />
                     <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-48 h-2 bg-gray-500 rounded-full blur-sm opacity-30" />
                   </div>
                 </section>
 
-                {/* Séparation */}
                 <div className="my-24 border-t border-gray-300 w-full max-w-5xl mx-auto" />
 
-                {/* === Zone d’intervention === */}
                 <section className="mt-16">
                   <h2 className="text-3xl font-extrabold text-blue-700 text-center mb-8 drop-shadow-md flex items-center justify-center gap-3">
                     <FaCarSide className="w-8 h-8 text-blue-500" />
@@ -117,7 +121,6 @@ export function App() {
                   </div>
                 </section>
 
-                {/* === Périmètre d’intervention === */}
                 <section className="mt-16 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-md p-8 max-w-4xl mx-auto flex items-start gap-6">
                   <div className="bg-blue-100 p-4 rounded-full shadow-sm">
                     <PiMapPinLineDuotone className="h-8 w-8 text-blue-600" />
@@ -127,22 +130,15 @@ export function App() {
                       Périmètre d’intervention
                     </h2>
                     <p className="text-gray-700 text-lg leading-relaxed">
-                      J’interviens principalement dans le nord de la Sarthe (72), autour de&nbsp;
-                      <strong>Beaumont-sur-Sarthe</strong>, <strong>Saint-Marceau</strong>, <strong>Sillé-le-Guillaume</strong>,{" "}
-                      <strong>Fresnay-sur-Sarthe</strong> et leurs environs, ainsi que sur <strong>Le Mans</strong>.
+                      J’interviens principalement dans le nord de la Sarthe (72), autour de <strong>Beaumont-sur-Sarthe</strong>, <strong>Saint-Marceau</strong>, <strong>Sillé-le-Guillaume</strong>, <strong>Fresnay-sur-Sarthe</strong> et leurs environs, ainsi que sur <strong>Le Mans</strong>.
                     </p>
                   </div>
                 </section>
 
-                {/* Séparation */}
-               <div className="my-24 border-t border-gray-300 w-full max-w-5xl mx-auto" />
+                <div className="my-24 border-t border-gray-300 w-full max-w-5xl mx-auto" />
 
-
-                {/* === À propos de moi === */}
-                <section >
+                <section>
                   <div className="max-w-5xl mx-auto grid gap-10 md:grid-cols-3 items-center border border-gray-200 rounded-3xl shadow-lg p-8 bg-white">
-                    
-                    {/* Photo */}
                     <div className="flex justify-center md:justify-start">
                       <div className="w-44 h-44 rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-300 transition-transform duration-300 hover:scale-105">
                         <img
@@ -154,22 +150,17 @@ export function App() {
                         />
                       </div>
                     </div>
-
-                    {/* Texte */}
                     <div className="md:col-span-2 space-y-6">
                       <h2 className="text-3xl font-semibold text-blue-600 tracking-tight">À propos de moi</h2>
                       <p className="text-lg text-gray-700 leading-relaxed">
-                        Passionné par le numérique, je mets mes <span className="text-blue-600 font-semibold">compétences informatiques</span> au service de toutes et tous, 
-                        avec pour priorité la <span className="text-blue-600 font-semibold">clarté</span> et la <span className="text-blue-600 font-semibold">bienveillance</span>.
+                        Passionné par le numérique, je mets mes <span className="text-blue-600 font-semibold">compétences informatiques</span> au service de toutes et tous, avec pour priorité la <span className="text-blue-600 font-semibold">clarté</span> et la <span className="text-blue-600 font-semibold">bienveillance</span>.
                       </p>
                       <p className="text-lg text-gray-700 leading-relaxed">
                         J’interviens directement à domicile pour <strong>simplifier</strong> votre relation au numérique, en respectant votre rythme et vos besoins, avec toujours beaucoup <span className="text-blue-600 font-semibold">d’écoute</span> et de <span className="text-blue-600 font-semibold">pédagogie</span>.
                       </p>
                     </div>
-
                   </div>
                 </section>
-
               </main>
 
               <Footer />
