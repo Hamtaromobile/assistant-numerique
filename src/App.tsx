@@ -16,6 +16,7 @@ import BackgroundParallax from "./components/BackgroundParallax";
 import BackgroundImageWindow from "./components/BackgroundImageWindow";
 import { useBodyClass } from "./components/useBodyClass";
 import { useEffect, useState } from "react";
+import ContactActionButton from "./components/ContactActionButton";
 
 const MapWindow = lazy(() => import("./components/MapWindow"));
 
@@ -108,7 +109,11 @@ export function App() {
                 </section>
 
                 <div className="my-24 border-t border-gray-300 w-full max-w-5xl mx-auto" />
-
+                <ContactActionButton
+                  phoneNumber="+33675418360"
+                  emailAddress="antoine.informatique72@gmail.com"
+                  className="mt-10"
+                />
                 <section className="mt-16">
                   <h2 className="text-3xl font-extrabold text-blue-700 text-center mb-8 drop-shadow-md flex items-center justify-center gap-3">
                     <FaCarSide className="w-8 h-8 text-blue-500" />

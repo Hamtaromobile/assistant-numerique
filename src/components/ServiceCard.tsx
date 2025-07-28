@@ -8,7 +8,6 @@ export default function ServiceCard({
   description,
   href = "#",
   style,
-  mobileOnlyDescription = false,
 }: {
   icon: React.ReactNode;
   title: string;
