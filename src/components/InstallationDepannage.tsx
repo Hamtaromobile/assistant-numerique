@@ -78,30 +78,25 @@ export default function InstallationDepannage() {
 
           <section className="bg-blue-50 p-4 md:p-6 rounded-xl shadow mt-6 md:mt-8 text-center">
             <h2 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">💶 Tarifs & zone d’intervention</h2>
+
             <p className="text-gray-800 mb-2">
-              Je propose un accompagnement informatique personnalisé, à votre domicile, au tarif de <strong>50 € de l’heure</strong>.
+              <span className="text-green-700 font-semibold">
+                ✅ Vous ne payez que <strong>25 € de l’heure</strong>
+              </span>{" "}
+              grâce au crédit d’impôt de 50 %, réservé aux particuliers dans le cadre des services à la personne.<br />
+              Le tarif initial est de <strong>50 € de l’heure</strong>, mais vous récupérez la moitié du montant via votre déclaration annuelle aux impôts.<br />
               Chaque intervention est réalisée avec <span className="font-semibold text-blue-700">patience</span>, 
-              <span className="font-semibold text-blue-700"> pédagogie</span> et <span className="font-semibold text-blue-700">bienveillance</span>,
-              pour vous offrir un service sur-mesure, adapté à vos besoins.
+              <span className="font-semibold text-blue-700"> pédagogie</span> et 
+              <span className="font-semibold text-blue-700"> bienveillance</span>, pour un accompagnement sur-mesure.
             </p>
 
-            {/* Mobile/tablette - bouton visible */}
-            <p className="mt-3 text-gray-800 block md:hidden">
+            <p className="mt-3 text-gray-800">
               <Link 
                 to="/credit-impot" 
                 className="inline-block bg-blue-700 text-white font-semibold px-4 py-2 rounded hover:bg-blue-800 transition"
               >
-                Crédit d’impôt de 50 %
-              </Link> <br />
-              Vous ne payez en réalité que <strong>25 € de l’heure</strong> après déclaration.
-            </p>
-
-            {/* Desktop - version lien dans phrase */}
-            <p className="mt-4 text-gray-800 hidden md:block">
-              🧾 Grâce au{" "}
-              <Link to="/credit-impot" className="text-blue-800 font-semibold hover:underline">
-                crédit d’impôt de 50 %
-              </Link>, vous ne payez en réalité que <strong>25 € de l’heure</strong> après déclaration.
+                En savoir plus sur le crédit d’impôt
+              </Link>
             </p>
 
             <p className="mt-4 text-gray-800">
@@ -115,7 +110,7 @@ export default function InstallationDepannage() {
                 className="h-12 md:h-16 mb-2"
               />
               <p className="text-xs md:text-sm text-gray-600 italic">
-                Agréé Service à la Personne – bénéficiez du crédit d’impôt
+                Activité agréée « Service à la Personne » – vous bénéficiez du crédit d’impôt
               </p>
             </div>
           </section>
