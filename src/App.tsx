@@ -114,7 +114,7 @@ export function App() {
                   emailAddress="antoine.informatique72@gmail.com"
                   className="mt-10"
                 />
-                <section className="mt-16">
+                <section className="mt-16" id="zone">
                   <h2 className="text-3xl font-extrabold text-blue-700 text-center mb-8 drop-shadow-md flex items-center justify-center gap-3">
                     <FaCarSide className="w-8 h-8 text-blue-500" />
                     Zone d’intervention
@@ -126,19 +126,22 @@ export function App() {
                   </div>
                 </section>
 
-                <section className="mt-16 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-md p-8 max-w-4xl mx-auto flex items-start gap-6">
-                  <div className="bg-blue-100 p-4 rounded-full shadow-sm">
-                    <PiMapPinLineDuotone className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-800 mb-2 tracking-wide">
-                      Périmètre d’intervention
-                    </h2>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      J’interviens principalement dans le nord de la Sarthe (72), autour de <strong>Beaumont-sur-Sarthe</strong>, <strong>Saint-Marceau</strong>, <strong>Sillé-le-Guillaume</strong>, <strong>Fresnay-sur-Sarthe</strong> et leurs environs, ainsi que sur <strong>Le Mans</strong>.
-                    </p>
-                  </div>
+                <section className="mt-16 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-md p-8 max-w-4xl mx-auto
+                    flex flex-col md:flex-row items-start md:items-center gap-6"
+                  >
+                    <div className="bg-blue-100 p-4 rounded-full shadow-sm flex-shrink-0">
+                      <PiMapPinLineDuotone className="h-8 w-8 text-blue-600" />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-bold text-gray-800 mb-2 tracking-wide">
+                        Périmètre d’intervention
+                      </h2>
+                      <p className="text-gray-700 text-lg leading-relaxed">
+                        J’interviens principalement dans le nord de la Sarthe (72), autour de <strong>Beaumont-sur-Sarthe</strong>, <strong>Saint-Marceau</strong>, <strong>Sillé-le-Guillaume</strong>, <strong>Fresnay-sur-Sarthe</strong> et leurs environs, ainsi que sur <strong>Le Mans</strong>.
+                      </p>
+                    </div>
                 </section>
+
 
                 <div className="my-24 border-t border-gray-300 w-full max-w-5xl mx-auto" />
 
@@ -148,7 +151,7 @@ export function App() {
                       <div className="w-44 h-44 rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-300 transition-transform duration-300 hover:scale-105">
                         <img
                           src="/chemin-vers-ta-photo.jpg"
-                          alt="Portrait de [Ton prénom]"
+                          alt="Portrait d'Antoine"
                           className="w-full h-full object-cover"
                           loading="lazy"
                           decoding="async"
