@@ -21,20 +21,22 @@ export default function InstallationDepannage() {
         </h1>
         <ScreenFrame>
           {/* 🔌 Installation de matériel */}
-          <section className="bg-gray-100 p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-8">
-            <h2 className="text-xl md:text-2xl font-semibold mb-2">🔌 Installation de matériel</h2>
+          <section
+            className="bg-gray-100 p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-8"
+            aria-labelledby="installation-title"
+          >
+            <h2 id="installation-title" className="text-xl md:text-2xl font-semibold mb-2">
+              <span role="img" aria-hidden="true">🔌</span> Installation de matériel
+            </h2>
 
-            {/* Mobile/tablette - version courte */}
             <p className="block md:hidden">
               Je me déplace chez vous pour installer et expliquer le fonctionnement de vos équipements.
             </p>
-            {/* Desktop - version complète */}
             <p className="hidden md:block">
               Vous venez d’acheter un ordinateur, une imprimante ou une box internet ? Je me déplace à
               votre domicile pour tout installer et vous expliquer le fonctionnement simplement, à votre
               rythme.
             </p>
-
             <p className="hidden md:block mt-2">
               Ordinateur portable ou fixe, écran, clavier, souris, imprimante filaire ou Wi-Fi… Je
               m’occupe de tout. Je peux aussi vous aider à configurer votre tablette ou votre smartphone
@@ -43,20 +45,22 @@ export default function InstallationDepannage() {
           </section>
 
           {/* 🛠️ Dépannage à domicile */}
-          <section className="bg-gray-100 p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-8">
-            <h2 className="text-xl md:text-2xl font-semibold mb-2">🛠️ Dépannage à domicile</h2>
+          <section
+            className="bg-gray-100 p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-8"
+            aria-labelledby="depannage-title"
+          >
+            <h2 id="depannage-title" className="text-xl md:text-2xl font-semibold mb-2">
+              <span role="img" aria-hidden="true">🛠️</span> Dépannage à domicile
+            </h2>
 
-            {/* Mobile/tablette - version courte */}
             <p className="block md:hidden">
               Je répare vos appareils rapidement : lenteurs, virus, connexion, erreurs système…
             </p>
-            {/* Desktop - version complète */}
             <p className="hidden md:block">
               Votre ordinateur met du temps à démarrer ? Un message d’erreur s’affiche, ou votre connexion
               internet ne fonctionne plus ? Je peux intervenir rapidement à domicile pour remettre vos
               appareils en état de marche.
             </p>
-
             <p className="hidden md:block mt-2">
               J’effectue des diagnostics simples et efficaces : suppression de virus ou de publicités
               gênantes, résolution des lenteurs ou pannes de démarrage, réparation d’erreurs système,
@@ -65,14 +69,17 @@ export default function InstallationDepannage() {
           </section>
 
           {/* 👨‍🔧 Une assistance claire et bienveillante */}
-          <section className="bg-gray-100 p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-8">
-            <h2 className="text-xl md:text-2xl font-semibold mb-2">👨‍🔧 Une assistance claire et bienveillante</h2>
+          <section
+            className="bg-gray-100 p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-8"
+            aria-labelledby="assistance-title"
+          >
+            <h2 id="assistance-title" className="text-xl md:text-2xl font-semibold mb-2">
+              <span role="img" aria-hidden="true">👨‍🔧</span> Une assistance claire et bienveillante
+            </h2>
 
-            {/* Mobile/tablette - version courte */}
             <p className="block md:hidden">
               Patience et pédagogie pour vous rendre autonome, sans jargon technique.
             </p>
-            {/* Desktop - version complète */}
             <p className="hidden md:block">
               Chaque intervention est réalisée avec patience et pédagogie, pour que vous compreniez ce qui est fait. 
               Mon objectif : vous rendre autonome dans l’utilisation de vos équipements, sans jargon technique inutile.
@@ -80,8 +87,13 @@ export default function InstallationDepannage() {
           </section>
 
           {/* 💶 Tarifs & zone d’intervention */}
-          <section className="bg-blue-50 p-4 md:p-6 rounded-xl shadow mt-6 md:mt-8 text-center">
-            <h2 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">💶 Tarifs & zone d’intervention</h2>
+          <section
+            className="bg-blue-50 p-4 md:p-6 rounded-xl shadow mt-6 md:mt-8 text-center"
+            aria-labelledby="tarifs-title"
+          >
+            <h2 id="tarifs-title" className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
+              <span role="img" aria-hidden="true">💶</span> Tarifs & zone d’intervention
+            </h2>
 
             <p className="text-gray-800 mb-2">
               <span className="text-green-700 font-semibold">

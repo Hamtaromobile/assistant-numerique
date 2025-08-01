@@ -25,25 +25,31 @@ export default function MapComponent({ isMaximized = false }: MapComponentProps)
   return (
     <div
       title="Zone de couverture des prestations à domicile"
+      aria-describedby="map-description"
       className={`w-full ${
         isMaximized ? "max-w-full h-[80vh]" : "max-w-[1000px] h-[570px]"
       } mx-auto rounded-xl overflow-hidden shadow-md`}
     >
       {/* Texte visible pour tous */}
-      <div className="text-sm text-center text-gray-700 py-2 bg-blue-100">
+      <div
+        id="map-description"
+        className="text-sm text-center text-gray-700 py-2 bg-blue-100"
+      >
         Zone de couverture estimée pour les prestations à domicile
       </div>
 
-      {/* Texte invisible pour les lecteurs d’écran */}
+      {/* Description non visible pour les lecteurs d’écran */}
       <div
         className="sr-only"
         role="region"
-        aria-label="Carte interactive montrant la zone d’intervention autour de La Flèche, dans un rayon de 25 kilomètres"
+        aria-label="Carte interactive montrant la zone d’intervention autour de Saint-Marceau, dans un rayon de 25 kilomètres"
       >
-        Carte de la zone de couverture
+        Cette carte indique la zone de couverture de vos services d’assistance informatique à domicile,
+        centrée autour de Saint-Marceau (Sarthe), dans un rayon d’environ 25 km.
       </div>
 
       <GoogleMap
+        aria-hidden="true"
         mapContainerStyle={{ width: "100%", height: "100%" }}
         center={center}
         zoom={zoomLevel}
