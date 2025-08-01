@@ -1,6 +1,6 @@
 .service-card:hover .btn-more {
-  background-color: #727375; /* gris foncé personnalisé */
-  color: white; /* ← texte blanc au survol */
+  background-color: #0F0E8C; 
+  color: white; 
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 

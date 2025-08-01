@@ -4,11 +4,20 @@ export default function BackgroundParallax() {
   const [offsetY, setOffsetY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [docHeight, setDocHeight] = useState(window.innerHeight);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mediaQuery.matches);
+    const handleChange = () => setReducedMotion(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
-      // On récupère la hauteur totale du document
       setDocHeight(document.documentElement.scrollHeight);
     };
     handleResize();
@@ -18,21 +27,23 @@ export default function BackgroundParallax() {
   }, []);
 
   useEffect(() => {
+    if (reducedMotion) return; // désactive l’effet si réduction du mouvement demandée
+
     const handleScroll = () => setOffsetY(window.pageYOffset);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [reducedMotion]);
 
   const startOffset = -500;
   const speedFactor = isMobile ? 0.2 : 0.1;
-  const backgroundPositionY = startOffset - offsetY * speedFactor;
+  const backgroundPositionY = reducedMotion ? startOffset : startOffset - offsetY * speedFactor;
 
   return (
     <div
       aria-hidden="true"
       className="fixed top-0 left-0 w-full -z-10 pointer-events-none"
       style={{
-        height: docHeight + "px", // IMPORTANT : hauteur totale du document, pas juste 100vh
+        height: docHeight + "px",
         backgroundImage: "url('/images/backgroundAccueil.webp')",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",

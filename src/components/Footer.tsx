@@ -1,19 +1,45 @@
 export default function Footer() {
   return (
-    <footer className="bg-blue-800 text-white px-4 py-6 text-center text-sm">
+    <footer
+      className="bg-blue-800 text-white px-4 py-6 text-center text-sm"
+      role="contentinfo"
+    >
       <div className="max-w-4xl mx-auto space-y-2">
         {/* Nom + droits */}
         <p>© {new Date().getFullYear()} Antoine Lozach — Tous droits réservés</p>
 
         {/* Coordonnées */}
-        <p>
-          📞 <a href="tel:0675418360" className="underline hover:text-blue-300">06 75 41 83 60</a> — 
-          📧 <a href="mailto:antoine.informatique72@gmail.com" className="underline hover:text-blue-300">antoine.informatique72@gmail.com</a>
-        </p>
+        <address className="not-italic">
+          <p>
+            <span aria-hidden="true" role="img">📞</span>{' '}
+            <a
+              href="tel:0675418360"
+              className="underline hover:text-blue-300"
+              aria-label="Téléphoner au 06 75 41 83 60"
+            >
+              06 75 41 83 60
+            </a>{' '}
+            —{' '}
+            <span aria-hidden="true" role="img">📧</span>{' '}
+            <a
+              href="mailto:antoine.informatique72@gmail.com"
+              className="underline hover:text-blue-300"
+              aria-label="Envoyer un mail à antoine.informatique72@gmail.com"
+            >
+              antoine.informatique72@gmail.com
+            </a>
+          </p>
+        </address>
 
-        {/* Mentions légales ou lien admin si besoin */}
+        {/* Mentions légales */}
         <p>
-          <a href="/mentions-legales" className="underline hover:text-blue-300">Mentions légales</a>
+          <a
+            href="/mentions-legales"
+            className="underline hover:text-blue-300"
+            aria-label="Voir les mentions légales"
+          >
+            Mentions légales
+          </a>
         </p>
       </div>
     </footer>

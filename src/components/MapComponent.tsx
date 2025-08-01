@@ -10,17 +10,11 @@ export default function MapComponent({ isMaximized = false }: MapComponentProps)
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
-    if (screenWidth < 768) {
-      setZoomLevel(9.3);
-    } else {
-      setZoomLevel(10);
-    }
+    setZoomLevel(screenWidth < 768 ? 9.3 : 10);
   }, []);
 
-  // centre exact de la map
   const center = { lat: 48.17883, lng: 0.12713 };
 
-  // carré (polygon) centré autour du centre, ici un carré d'environ 0.007 de côté
   const polygonCoords = [
     { lat: center.lat + 0.0035, lng: center.lng - 0.005 },
     { lat: center.lat + 0.0035, lng: center.lng + 0.005 },
@@ -31,19 +25,40 @@ export default function MapComponent({ isMaximized = false }: MapComponentProps)
   return (
     <LoadScript googleMapsApiKey="AIzaSyCSiwf_VnbGFasBRdas8WLd5r46A2K7x7o">
       <div
+        title="Zone de couverture des prestations à domicile"
         className={`w-full ${
-          isMaximized ? "max-w-full h-[80vh]" : "max-w-[1000px] h-[550px]"
+          isMaximized ? "max-w-full h-[80vh]" : "max-w-[1000px] h-[570px]"
         } mx-auto rounded-xl overflow-hidden shadow-md`}
       >
+        {/* Texte visible pour tous */}
+        <div className="text-sm text-center text-gray-700 py-2 bg-blue-100">
+          Zone de couverture estimée pour les prestations à domicile
+        </div>
+
+        {/* Texte invisible pour les lecteurs d’écran */}
+        <div
+          className="sr-only"
+          role="region"
+          aria-label="Carte interactive montrant la zone d’intervention autour de La Flèche, dans un rayon de 25 kilomètres"
+        >
+          Carte de la zone de couverture
+        </div>
+
         <GoogleMap
           mapContainerStyle={{ width: "100%", height: "100%" }}
           center={center}
           zoom={zoomLevel}
+          options={{
+            mapTypeControl: false,
+            fullscreenControl: false,
+            streetViewControl: false,
+            keyboardShortcuts: false,
+          }}
         >
           <Polygon
             paths={polygonCoords}
             options={{
-              fillColor: "rgba(66, 135, 245, 0.3)",
+              fillColor: "#4287f5",
               fillOpacity: 0.3,
               strokeColor: "#4287f5",
               strokeOpacity: 0.8,
@@ -54,7 +69,8 @@ export default function MapComponent({ isMaximized = false }: MapComponentProps)
             center={center}
             radius={25000}
             options={{
-              fillColor: "rgba(66, 135, 245, 0.2)",
+              fillColor: "#4287f5",
+              fillOpacity: 0.2,
               strokeColor: "#4287f5",
               strokeOpacity: 0.8,
               strokeWeight: 1,

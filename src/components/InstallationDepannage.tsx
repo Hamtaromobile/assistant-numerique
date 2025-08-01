@@ -20,6 +20,7 @@ export default function InstallationDepannage() {
           Installation & Dépannage
         </h1>
         <ScreenFrame>
+          {/* 🔌 Installation de matériel */}
           <section className="bg-gray-100 p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-8">
             <h2 className="text-xl md:text-2xl font-semibold mb-2">🔌 Installation de matériel</h2>
 
@@ -41,6 +42,7 @@ export default function InstallationDepannage() {
             </p>
           </section>
 
+          {/* 🛠️ Dépannage à domicile */}
           <section className="bg-gray-100 p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-8">
             <h2 className="text-xl md:text-2xl font-semibold mb-2">🛠️ Dépannage à domicile</h2>
 
@@ -62,6 +64,7 @@ export default function InstallationDepannage() {
             </p>
           </section>
 
+          {/* 👨‍🔧 Une assistance claire et bienveillante */}
           <section className="bg-gray-100 p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-8">
             <h2 className="text-xl md:text-2xl font-semibold mb-2">👨‍🔧 Une assistance claire et bienveillante</h2>
 
@@ -76,6 +79,7 @@ export default function InstallationDepannage() {
             </p>
           </section>
 
+          {/* 💶 Tarifs & zone d’intervention */}
           <section className="bg-blue-50 p-4 md:p-6 rounded-xl shadow mt-6 md:mt-8 text-center">
             <h2 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">💶 Tarifs & zone d’intervention</h2>
 

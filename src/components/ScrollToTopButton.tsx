@@ -4,28 +4,25 @@ export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    function toggleVisibility() {
-      if (window.pageYOffset > 100) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    }
+    const toggleVisibility = () => {
+      setIsVisible(window.pageYOffset > 100);
+    };
+
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  function scrollToTop() {
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  };
 
   return (
-    <>
+    <div aria-hidden={!isVisible}>
       {isVisible && (
         <button
           onClick={scrollToTop}
-          aria-label="Remonter en haut"
-          title="Remonter en haut"
+          aria-label="Remonter en haut de la page"
+          title="Remonter en haut de la page"
           className="
             fixed bottom-8 right-8
             bg-blue-300 bg-opacity-70
@@ -34,7 +31,7 @@ export default function ScrollToTopButton() {
             shadow-lg
             hover:bg-blue-400 hover:bg-opacity-90
             transition-colors
-            focus:outline-none
+            focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2
             z-50
             flex items-center justify-center
           "
@@ -46,7 +43,11 @@ export default function ScrollToTopButton() {
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={3}
+            role="img"
+            aria-hidden="true"
           >
+            <title>Flèche vers le haut</title>
+            <desc>Icône indiquant de revenir en haut de la page</desc>
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -55,6 +56,6 @@ export default function ScrollToTopButton() {
           </svg>
         </button>
       )}
-    </>
+    </div>
   );
 }

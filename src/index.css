@@ -1,60 +1,28 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/*body.home::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 150%;
-  width: 100%;
-  background-image: url("/images/backgroundAccueil.webp");
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  transform: translateZ(0);
-  z-index: -1;
-  opacity: 0.7;
-  will-change: transform;
-  animation: scrollParallax linear;
-  animation-timeline: scroll();
-  animation-duration: auto;
-}*/
-
-body.soutien-informatique {
-  background-image: url("/images/backgroundCards.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-body.demarches-en-ligne {
-  background-image: url("/images/backgroundCards.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-body.installation-depannage {
-  background-image: url("/images/backgroundCards.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
+/* Fond personnalisé par page */
+body.soutien-informatique,
+body.demarches-en-ligne,
+body.installation-depannage,
 body.credit-impot {
   background-image: url("/images/backgroundCards.webp");
   background-size: cover;
-  background-position: center top;
+  background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
+/* Position ajustée uniquement pour la page crédit d'impôt */
+body.credit-impot {
+  background-position: center top;
+}
 
+/* Animation Parallax */
 @keyframes scrollParallax {
   0% {
     transform: translateY(0);
@@ -63,4 +31,3 @@ body.credit-impot {
     transform: translateY(-20%);
   }
 }
-

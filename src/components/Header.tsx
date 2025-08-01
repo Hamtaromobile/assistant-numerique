@@ -9,7 +9,6 @@ export default function Header() {
 
   const location = useLocation();
 
-  // Détection simple mobile (largeur < 640px)
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 640);
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 640);
@@ -17,24 +16,35 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Fermer dropdown si clic en dehors
+  // Fermer dropdown si clic en dehors ou touche Escape
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setDropdownOpen(false);
       }
     };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setDropdownOpen(false);
+        setIsOpen(false);
+      }
+    };
+
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
-  // Fonction pour fermer menus quand on clique sur un lien
   const handleLinkClick = () => {
     setIsOpen(false);
     setDropdownOpen(false);
   };
 
-  // Afficher l'option "Zone d'intervention" uniquement sur page "/" et mobile dans menu hamburger ouvert
   const showZoneLink = location.pathname === "/" && isMobile && isOpen;
 
   return (
@@ -57,6 +67,7 @@ export default function Header() {
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={isOpen}
+            aria-controls="main-navigation"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -64,6 +75,8 @@ export default function Header() {
 
         {/* Navigation */}
         <nav
+          id="main-navigation"
+          aria-label="Menu principal"
           className={`${
             isOpen ? "flex" : "hidden"
           } flex-col lg:flex lg:flex-row items-center mt-4 lg:mt-0 gap-4 lg:gap-8 font-semibold text-lg relative`}
@@ -75,11 +88,7 @@ export default function Header() {
 
           {/* Option Zone d’intervention uniquement sur page accueil mobile menu ouvert */}
           {showZoneLink && (
-            <a
-              href="#zone"
-              onClick={handleLinkClick}
-              className="hover:underline"
-            >
+            <a href="#zone" onClick={handleLinkClick} className="hover:underline">
               Zone d’intervention
             </a>
           )}
@@ -91,33 +100,44 @@ export default function Header() {
               className="flex items-center gap-1 hover:underline focus:outline-none"
               aria-haspopup="true"
               aria-expanded={dropdownOpen}
+              aria-controls="submenu-mes-services"
               aria-label="Menu Mes services"
             >
               Mes services <ChevronDown size={18} />
             </button>
 
             {dropdownOpen && (
-              <div className="absolute left-0 lg:left-auto lg:right-0 top-full mt-2 bg-white text-blue-900 rounded shadow-lg z-50 w-64 border border-gray-200">
+              <div
+                id="submenu-mes-services"
+                role="menu"
+                className="absolute left-0 lg:left-auto lg:right-0 top-full mt-2 bg-white text-blue-900 rounded shadow-lg z-50 w-64 border border-gray-200"
+              >
                 <Link
                   to="/soutien-informatique"
+                  role="menuitem"
+                  tabIndex={0}
                   className="block px-4 py-2 hover:bg-blue-100"
                   onClick={handleLinkClick}
                 >
-                  💻 Soutien informatique
+                  <span aria-hidden="true">💻</span> Soutien informatique
                 </Link>
                 <Link
                   to="/demarches-en-ligne"
+                  role="menuitem"
+                  tabIndex={0}
                   className="block px-4 py-2 hover:bg-blue-100"
                   onClick={handleLinkClick}
                 >
-                  🌐 Démarches en ligne
+                  <span aria-hidden="true">🌐</span> Démarches en ligne
                 </Link>
                 <Link
                   to="/installation-depannage"
+                  role="menuitem"
+                  tabIndex={0}
                   className="block px-4 py-2 hover:bg-blue-100"
                   onClick={handleLinkClick}
                 >
-                  🔧 Installation & dépannage
+                  <span aria-hidden="true">🔧</span> Installation & dépannage
                 </Link>
               </div>
             )}
@@ -125,10 +145,10 @@ export default function Header() {
 
           {/* Contact */}
           <a href="tel:+33675418360" className="hover:underline">
-            📞 06 75 41 83 60
+            <span aria-hidden="true">📞</span> 06 75 41 83 60
           </a>
           <a href="mailto:antoine.informatique72@gmail.com" className="hover:underline">
-            📧 antoine.informatique72@gmail.com
+            <span aria-hidden="true">📧</span> antoine.informatique72@gmail.com
           </a>
         </nav>
       </div>

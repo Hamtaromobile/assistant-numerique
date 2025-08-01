@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        titre: ['Poppins', 'sans-serif'],
+      },
       keyframes: {
         'fade-in-up': {
           '0%': { opacity: 0, transform: 'translateY(20px)' },
