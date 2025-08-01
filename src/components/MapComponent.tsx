@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { GoogleMap, LoadScript, Polygon, Circle } from "@react-google-maps/api";
+import { GoogleMap, Polygon, Circle } from "@react-google-maps/api";
 
 interface MapComponentProps {
   isMaximized?: boolean;
@@ -23,61 +23,59 @@ export default function MapComponent({ isMaximized = false }: MapComponentProps)
   ];
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyCSiwf_VnbGFasBRdas8WLd5r46A2K7x7o">
-      <div
-        title="Zone de couverture des prestations à domicile"
-        className={`w-full ${
-          isMaximized ? "max-w-full h-[80vh]" : "max-w-[1000px] h-[570px]"
-        } mx-auto rounded-xl overflow-hidden shadow-md`}
-      >
-        {/* Texte visible pour tous */}
-        <div className="text-sm text-center text-gray-700 py-2 bg-blue-100">
-          Zone de couverture estimée pour les prestations à domicile
-        </div>
-
-        {/* Texte invisible pour les lecteurs d’écran */}
-        <div
-          className="sr-only"
-          role="region"
-          aria-label="Carte interactive montrant la zone d’intervention autour de La Flèche, dans un rayon de 25 kilomètres"
-        >
-          Carte de la zone de couverture
-        </div>
-
-        <GoogleMap
-          mapContainerStyle={{ width: "100%", height: "100%" }}
-          center={center}
-          zoom={zoomLevel}
-          options={{
-            mapTypeControl: false,
-            fullscreenControl: false,
-            streetViewControl: false,
-            keyboardShortcuts: false,
-          }}
-        >
-          <Polygon
-            paths={polygonCoords}
-            options={{
-              fillColor: "#4287f5",
-              fillOpacity: 0.3,
-              strokeColor: "#4287f5",
-              strokeOpacity: 0.8,
-              strokeWeight: 2,
-            }}
-          />
-          <Circle
-            center={center}
-            radius={25000}
-            options={{
-              fillColor: "#4287f5",
-              fillOpacity: 0.2,
-              strokeColor: "#4287f5",
-              strokeOpacity: 0.8,
-              strokeWeight: 1,
-            }}
-          />
-        </GoogleMap>
+    <div
+      title="Zone de couverture des prestations à domicile"
+      className={`w-full ${
+        isMaximized ? "max-w-full h-[80vh]" : "max-w-[1000px] h-[570px]"
+      } mx-auto rounded-xl overflow-hidden shadow-md`}
+    >
+      {/* Texte visible pour tous */}
+      <div className="text-sm text-center text-gray-700 py-2 bg-blue-100">
+        Zone de couverture estimée pour les prestations à domicile
       </div>
-    </LoadScript>
+
+      {/* Texte invisible pour les lecteurs d’écran */}
+      <div
+        className="sr-only"
+        role="region"
+        aria-label="Carte interactive montrant la zone d’intervention autour de La Flèche, dans un rayon de 25 kilomètres"
+      >
+        Carte de la zone de couverture
+      </div>
+
+      <GoogleMap
+        mapContainerStyle={{ width: "100%", height: "100%" }}
+        center={center}
+        zoom={zoomLevel}
+        options={{
+          mapTypeControl: false,
+          fullscreenControl: false,
+          streetViewControl: false,
+          keyboardShortcuts: false,
+        }}
+      >
+        <Polygon
+          paths={polygonCoords}
+          options={{
+            fillColor: "#4287f5",
+            fillOpacity: 0.3,
+            strokeColor: "#4287f5",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+          }}
+        />
+        <Circle
+          center={center}
+          radius={25000}
+          options={{
+            fillColor: "#4287f5",
+            fillOpacity: 0.2,
+            strokeColor: "#4287f5",
+            strokeOpacity: 0.8,
+            strokeWeight: 1,
+          }}
+        />
+      </GoogleMap>
+    </div>
   );
 }
