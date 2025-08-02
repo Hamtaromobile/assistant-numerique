@@ -41,10 +41,25 @@ export default function MentionsLegales() {
               <li><strong>Nom de l’entreprise :</strong> Antoine Lozach</li>
               <li><strong>Statut :</strong> Micro-entreprise (Services à la Personne - SAP)</li>
               <li><strong>Numéro SIRET :</strong> <span lang="fr">123 456 789 00012</span></li>
-              <li><strong>Adresse :</strong> disponible sur demande par email</li>
+              <li><strong>Numéro SAP :</strong> SAP938938198</li>
+              <li><strong>Adresse :</strong> En tant qu'entrepreneur individuel bénéficiant de la diffusion partielle (article A123-96 du Code de commerce), l’adresse du siège n’est pas publiée.</li>
               <li><strong>Responsable de publication :</strong> Antoine Lozach</li>
-              <li><strong>Contact :</strong> <a href="mailto:antoine.informatique72@gmail.com" className="text-blue-600 underline">antoine.informatique72@gmail.com</a> — <a href="tel:+33675418360" className="text-blue-600 underline">06 75 41 83 60</a></li>
+              <li>
+                <strong>Contact :</strong>{" "}
+                <a href="mailto:antoine.informatique72@gmail.com" className="text-blue-600 underline">
+                  antoine.informatique72@gmail.com
+                </a>{" "}
+                —{" "}
+                <a href="tel:+33675418360" className="text-blue-600 underline">
+                  06 75 41 83 60
+                </a>
+              </li>
             </ul>
+
+            <p className="mt-4 text-sm text-gray-700">
+              Prestataire déclaré Service à la Personne (SAP).  
+              Les prestations informatiques proposées à domicile peuvent ouvrir droit à un crédit d’impôt de 50 % conformément à l’article 199 sexdecies du Code général des impôts.
+            </p>
           </section>
 
           <section className="mb-6" aria-labelledby="hebergeur-title">

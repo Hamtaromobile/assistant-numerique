@@ -58,9 +58,15 @@ export default function Header() {
                 Antoine LOZACH
               </Link>
             </h1>
-            <p className="text-sm italic text-blue-300">
-              Assistance informatique à domicile – Sarthe (72)
-            </p>
+            <p
+                className="text-sm italic font-semibold
+                          bg-gradient-to-r from-sky-400 via-sky-200 to-white
+                          bg-clip-text text-transparent select-none"
+                aria-label="Assistance informatique à domicile en Sarthe (72)"
+              >
+                Assistance informatique à domicile – Sarthe (72)
+              </p>
+
           </div>
           <button
             className="lg:hidden text-white"
