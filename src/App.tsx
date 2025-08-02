@@ -153,20 +153,22 @@ export function App() {
                             decoding="async"
                           />
                         </div>
-                      </div>
+                    </div>
                       <div className="md:col-span-2 space-y-6">
                         <h2 className="text-3xl font-titre font-semibold text-sky-600 tracking-tight">À propos de moi</h2>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                          Passionné par le numérique, je mets mes{" "}
-                          <span className="text-sky-600 font-semibold">compétences informatiques</span> au service de toutes et tous, avec
-                          pour priorité la <span className="text-sky-600 font-semibold">clarté</span> et la{" "}
-                          <span className="text-sky-600 font-semibold">bienveillance</span>.
-                        </p>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                          J’interviens directement à domicile pour <strong>simplifier</strong> votre relation au numérique, en respectant votre
-                          rythme et vos besoins, avec toujours beaucoup{" "}
-                          <span className="text-sky-600 font-semibold">d’écoute</span> et de{" "}
-                          <span className="text-sky-600 font-semibold">pédagogie</span>.
+
+                          <p className="text-lg text-gray-700 leading-relaxed">
+                            J’ai toujours aimé comprendre et expliquer le fonctionnement des outils numériques. Aujourd’hui, je mets mes{" "}
+                            <span className="text-sky-600 font-semibold">compétences informatiques</span> au service de toutes et tous, avec
+                            pour priorité la <span className="text-sky-600 font-semibold">clarté</span> et la{" "}
+                            <span className="text-sky-600 font-semibold">bienveillance</span>.
+                          </p>
+
+                          <p className="text-lg text-gray-700 leading-relaxed">
+                            J’interviens directement <strong>à domicile</strong> pour vous aider à mieux utiliser vos équipements numériques,
+                            en respectant votre rythme et vos besoins, toujours avec{" "}
+                            <span className="text-sky-600 font-semibold">écoute</span> et{" "}
+                            <span className="text-sky-600 font-semibold">pédagogie</span>.
                         </p>
                       </div>
                     </div>
