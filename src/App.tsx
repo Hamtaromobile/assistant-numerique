@@ -77,8 +77,8 @@ export function App() {
                 <Header />
 
                 <main className="p-8 relative z-10">
-                  <section className={`flex flex-col items-center ${isMobile ? "mt-4" : "mt-20"}`}>
-                    <h2 className="text-4xl font-titre font-bold text-gray-900 text-center mb-12 flex items-center justify-center gap-4 animate-fade-in-up">
+                  <section className={`flex flex-col items-center ${isMobile ? "mt-2" : "mt-20"}`}>
+                    <h2 className="text-4xl font-titre font-bold text-gray-900 text-center mb-6 sm:mb-12 flex items-center justify-center gap-4 animate-fade-in-up">
                       <RiServiceLine className="w-10 h-10 text-sky-600" />
                       Mes services
                     </h2>
@@ -93,6 +93,7 @@ export function App() {
                               title={card.title}
                               description={card.description}
                               href={card.href}
+                              style={{ animationDelay: `${index * 0.15}s` }} // ajoute un léger décalage progressif
                             />
                           ))}
                         </div>
