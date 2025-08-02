@@ -9,20 +9,19 @@ export default function BackButton() {
       aria-label="Revenir à la page précédente"
       title="Retour"
       className="
-        flex items-center text-blue-900 font-semibold 
-        bg-blue-100
-        hover:bg-blue-300
-        transition duration-200 ease-in-out
-        hover:scale-110 
-        hover:shadow-lg
-        shadow-md
-        p-2 rounded
-        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+        flex items-center font-medium
+        text-gray-800 bg-gradient-to-br from-gray-100 via-blue-50 to-blue-100
+        hover:from-white hover:to-blue-200
+        transition-all duration-200 ease-in-out
+        hover:scale-105 hover:shadow-md
+        shadow-sm border border-gray-300
+        px-4 py-2 rounded-xl
+        focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2
       "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6 mr-2"
+        className="h-5 w-5 mr-2 text-sky-600"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
