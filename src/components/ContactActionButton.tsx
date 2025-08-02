@@ -17,13 +17,11 @@ export default function ContactActionButton({ phoneNumber, emailAddress, classNa
     setTimeout(() => {
       containerRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       if (!showOptions) {
-        // Focus sur la liste d’options quand elle s’ouvre
         optionsRef.current?.focus();
       }
     }, 100);
   };
 
-  // Fermer menu au clic hors zone ou touche Escape
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (showOptions && containerRef.current && !containerRef.current.contains(e.target as Node)) {
@@ -49,35 +47,39 @@ export default function ContactActionButton({ phoneNumber, emailAddress, classNa
       <div className="w-full max-w-xs">
         <button
           onClick={handleClick}
-          className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-600 transition duration-300"
+          className="group w-full flex items-center justify-center gap-2
+            bg-gradient-to-br from-gray-100 via-blue-50 to-blue-100
+            text-gray-800 px-6 py-3 rounded-xl font-medium
+            border border-gray-300 shadow hover:shadow-md
+            hover:from-white hover:to-blue-200 transition-all duration-300"
           aria-expanded={showOptions}
           aria-controls="contact-options"
           aria-haspopup="true"
           type="button"
         >
-          <FiMail className="w-5 h-5" aria-hidden="true" />
+          <FiMail className="w-5 h-5 text-sky-600 transition-transform group-hover:scale-110 duration-300" aria-hidden="true" />
           Contactez-moi
         </button>
 
         {showOptions && (
           <div
             id="contact-options"
-            className="mt-3 flex flex-col gap-3 bg-white rounded-xl p-4 shadow-lg border border-gray-200 animate-fade-in"
+            className="mt-3 flex flex-col gap-3 bg-white rounded-xl p-4 shadow-md border border-gray-200 animate-fade-in"
             role="region"
             aria-label="Options de contact"
-            tabIndex={-1} // focusable programmatically
+            tabIndex={-1}
             ref={optionsRef}
           >
             <a
               href={`tel:${phoneNumber}`}
-              className="flex items-center justify-center gap-2 bg-green-500 text-white rounded-md py-2 font-medium hover:bg-green-600 transition"
+              className="flex items-center justify-center gap-2 bg-blue-100 text-sky-800 rounded-md py-2 font-medium hover:bg-blue-200 transition"
             >
               <FiPhone className="w-5 h-5" aria-hidden="true" />
               Par téléphone
             </a>
             <a
               href={`mailto:${emailAddress}`}
-              className="flex items-center justify-center gap-2 bg-indigo-500 text-white rounded-md py-2 font-medium hover:bg-indigo-600 transition"
+              className="flex items-center justify-center gap-2 bg-indigo-100 text-indigo-800 rounded-md py-2 font-medium hover:bg-indigo-200 transition"
             >
               <FiMail className="w-5 h-5" aria-hidden="true" />
               Par mail
