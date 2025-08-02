@@ -143,7 +143,7 @@ export function App() {
                   <div className="my-24 border-t border-gray-300 w-full max-w-5xl mx-auto" />
 
                   <section>
-                    <div className="max-w-5xl mx-auto grid gap-10 md:grid-cols-3 items-center border border-gray-200 rounded-3xl shadow-lg p-8 bg-white">
+                    <div id="about" className="max-w-5xl mx-auto grid gap-10 md:grid-cols-3 items-center border border-gray-200 rounded-3xl shadow-lg p-8 bg-white">
                       <div className="flex justify-center md:justify-start">
                         <div className="w-44 h-44 rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-300 transition-transform duration-300 hover:scale-105">
                           <img
@@ -155,7 +155,7 @@ export function App() {
                           />
                         </div>
                     </div>
-                      <div className="md:col-span-2 space-y-6">
+                      <div  className="md:col-span-2 space-y-6 ">
                         <h2 className="text-3xl font-titre font-semibold text-sky-600 tracking-tight">À propos de moi</h2>
 
                           <p className="text-lg text-gray-700 leading-relaxed">

@@ -46,6 +46,23 @@ export default function Header() {
   };
 
   const showZoneLink = location.pathname === "/" && isMobile && isOpen;
+  const showAboutLink = isMobile && isOpen;
+
+  // Fonction pour scroll smooth vers un id donné (utilisée pour zone et about)
+  const handleSmoothScroll = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    handleLinkClick();
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 285; // Ajuste si besoin selon la hauteur du header
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <header className="bg-blue-900 text-white p-6 shadow-xl border-b-4 border-blue-700 rounded-b-xl">
@@ -54,19 +71,22 @@ export default function Header() {
         <div className="flex justify-between items-center w-full lg:w-auto">
           <div>
             <h1 className="text-3xl font-bold drop-shadow-md">
-              <Link to="/" className="hover:text-blue-300 transition-colors" onClick={handleLinkClick}>
+              <Link
+                to="/"
+                className="hover:text-blue-300 transition-colors"
+                onClick={handleLinkClick}
+              >
                 Antoine LOZACH
               </Link>
             </h1>
             <p
-                className="text-sm italic font-semibold
-                          bg-gradient-to-r from-sky-400 via-sky-200 to-white
-                          bg-clip-text text-transparent select-none"
-                aria-label="Assistance informatique à domicile en Sarthe (72)"
-              >
-                Assistance informatique à domicile – Sarthe (72)
-              </p>
-
+              className="text-sm italic font-semibold
+                         bg-gradient-to-r from-sky-400 via-sky-200 to-white
+                         bg-clip-text text-transparent select-none"
+              aria-label="Assistance informatique à domicile en Sarthe (72)"
+            >
+              Assistance informatique à domicile – Sarthe (72)
+            </p>
           </div>
           <button
             className="lg:hidden text-white"
@@ -88,14 +108,41 @@ export default function Header() {
           } flex-col lg:flex lg:flex-row items-center mt-4 lg:mt-0 gap-4 lg:gap-8 font-semibold text-lg relative`}
         >
           {/* Lien Accueil */}
-          <Link to="/" onClick={handleLinkClick} className="hover:underline">
-            Accueil
+          <Link
+            to="/"
+            onClick={handleLinkClick}
+            className="hover:underline flex items-center gap-1"
+          >
+            {/* Icône maison visible uniquement sur mobile */}
+            <span aria-hidden="true" className="block sm:hidden">🏠</span>
+            <span className="sr-only">Accueil</span>
+            <span className="sm:not-sr-only">Accueil</span>
           </Link>
+
+          {/* Lien À propos de moi (mobile seulement quand menu ouvert) */}
+          {showAboutLink && (
+            <a
+              href="#about"
+              onClick={(e) => handleSmoothScroll(e, "about")}
+              className="hover:underline flex items-center gap-1"
+            >
+              <span aria-hidden="true">🙋‍♂️</span>
+              <span className="sr-only">À propos de moi</span>
+              <span aria-hidden="true" className="hidden">À propos de moi</span>
+              <span className="not-sr-only">À propos de moi</span>
+            </a>
+          )}
 
           {/* Option Zone d’intervention uniquement sur page accueil mobile menu ouvert */}
           {showZoneLink && (
-            <a href="#zone" onClick={handleLinkClick} className="hover:underline">
-              Zone d’intervention
+            <a
+              href="#zone"
+              onClick={(e) => handleSmoothScroll(e, "zone")}
+              className="hover:underline flex items-center gap-1"
+            >
+              <span aria-hidden="true">📍</span>
+              <span className="sr-only">Zone d’intervention</span>
+              <span className="not-sr-only">Zone d’intervention</span>
             </a>
           )}
 
@@ -122,39 +169,55 @@ export default function Header() {
                   to="/soutien-informatique"
                   role="menuitem"
                   tabIndex={0}
-                  className="block px-4 py-2 hover:bg-blue-100"
+                  className="block px-4 py-2 hover:bg-blue-100  items-center gap-2"
                   onClick={handleLinkClick}
                 >
-                  <span aria-hidden="true">💻</span> Soutien informatique
+                  <span aria-hidden="true">💻</span>
+                  <span className="sr-only">Soutien informatique</span>
+                  <span>Soutien informatique</span>
                 </Link>
                 <Link
                   to="/demarches-en-ligne"
                   role="menuitem"
                   tabIndex={0}
-                  className="block px-4 py-2 hover:bg-blue-100"
+                  className="block px-4 py-2 hover:bg-blue-100  items-center gap-2"
                   onClick={handleLinkClick}
                 >
-                  <span aria-hidden="true">🌐</span> Démarches en ligne
+                  <span aria-hidden="true">🌐</span>
+                  <span className="sr-only">Démarches en ligne</span>
+                  <span>Démarches en ligne</span>
                 </Link>
                 <Link
                   to="/installation-depannage"
                   role="menuitem"
                   tabIndex={0}
-                  className="block px-4 py-2 hover:bg-blue-100"
+                  className="block px-4 py-2 hover:bg-blue-100 items-center gap-2"
                   onClick={handleLinkClick}
                 >
-                  <span aria-hidden="true">🔧</span> Installation & dépannage
+                  <span aria-hidden="true">🔧</span>
+                  <span className="sr-only">Installation et dépannage</span>
+                  <span>Installation & dépannage</span>
                 </Link>
               </div>
             )}
           </div>
 
           {/* Contact */}
-          <a href="tel:+33675418360" className="hover:underline">
-            <span aria-hidden="true">📞</span> 06 75 41 83 60
+          <a
+            href="tel:+33675418360"
+            className="hover:underline flex items-center gap-1"
+          >
+            <span aria-hidden="true">📞</span>
+            <span className="sr-only">Téléphone</span>
+            <span>06 75 41 83 60</span>
           </a>
-          <a href="mailto:antoine.informatique72@gmail.com" className="hover:underline">
-            <span aria-hidden="true">📧</span> antoine.informatique72@gmail.com
+          <a
+            href="mailto:antoine.informatique72@gmail.com"
+            className="hover:underline flex items-center gap-1"
+          >
+            <span aria-hidden="true">📧</span>
+            <span className="sr-only">Email</span>
+            <span>antoine.informatique72@gmail.com</span>
           </a>
         </nav>
       </div>
