@@ -112,24 +112,18 @@ export default function SoutienInformatique() {
             </h2>
 
             <p className="text-gray-800 mb-2">
+              Tarif : <strong>50 € de l’heure</strong><br />
+              Grâce au crédit d’impôt de 50 % pour les services à la personne, 
+              vous récupérez <strong>25 €</strong> après votre déclaration annuelle. 
+              <br />
               <span className="text-green-700 font-semibold">
-                <span role="img" aria-hidden="true">
-                  ✅
-                </span>{" "}
-                Vous ne payez que <strong>25 € de l’heure</strong>
-              </span>{" "}
-              grâce au crédit d’impôt de 50 %, réservé aux particuliers dans le cadre
-              des services à la personne.
+                ✅ Votre coût réel : <strong>25 € de l’heure</strong>
+              </span>
               <br />
-              Le tarif initial est de <strong>50 € de l’heure</strong>, mais vous
-              récupérez la moitié du montant via votre déclaration annuelle aux
-              impôts.
-              <br />
-              Chaque intervention est réalisée avec{" "}
-              <span className="font-semibold text-blue-700">patience</span>,{" "}
-              <span className="font-semibold text-blue-700"> pédagogie</span> et{" "}
-              <span className="font-semibold text-blue-700"> bienveillance</span>, pour
-              un accompagnement sur-mesure.
+              Chaque intervention est réalisée avec 
+              <span className="font-semibold text-blue-700"> patience</span>, 
+              <span className="font-semibold text-blue-700"> pédagogie</span> et 
+              <span className="font-semibold text-blue-700"> bienveillance</span>.
             </p>
 
             <p className="mt-3 text-gray-800">

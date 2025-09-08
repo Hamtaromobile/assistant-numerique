@@ -147,7 +147,7 @@ export function App() {
                       <div className="flex justify-center md:justify-start">
                         <div className="w-44 h-44 rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-300 transition-transform duration-300 hover:scale-105">
                           <img
-                            src="/chemin-vers-ta-photo.jpg"
+                            src="/images/Antoine.webp"
                             alt="Portrait d'Antoine"
                             className="w-full h-full object-cover"
                             loading="lazy"
