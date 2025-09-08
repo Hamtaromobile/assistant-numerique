@@ -75,14 +75,14 @@ export default function ContactActionButton({ phoneNumber, emailAddress, classNa
               className="flex items-center justify-center gap-2 bg-blue-100 text-sky-800 rounded-md py-2 font-medium hover:bg-blue-200 transition"
             >
               <FiPhone className="w-5 h-5" aria-hidden="true" />
-              Par téléphone
+              0675418360
             </a>
             <a
               href={`mailto:${emailAddress}`}
               className="flex items-center justify-center gap-2 bg-indigo-100 text-indigo-800 rounded-md py-2 font-medium hover:bg-indigo-200 transition"
             >
-              <FiMail className="w-5 h-5" aria-hidden="true" />
-              Par mail
+              
+              antoine.informatique72@gmail.com
             </a>
           </div>
         )}

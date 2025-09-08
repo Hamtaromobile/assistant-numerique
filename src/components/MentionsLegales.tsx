@@ -40,8 +40,8 @@ export default function MentionsLegales() {
             <ul className="list-disc list-inside space-y-1">
               <li><strong>Nom de l’entreprise :</strong> Antoine Lozach</li>
               <li><strong>Statut :</strong> Micro-entreprise (Services à la Personne - SAP)</li>
-              <li><strong>Numéro SIRET :</strong> <span lang="fr">123 456 789 00012</span></li>
-              <li><strong>Numéro SAP :</strong> SAP938938198</li>
+              <li><strong>Numéro SIRET :</strong> <span lang="fr">938 938 198 00026</span></li>
+              <li><strong>Numéro SAP :</strong> 938938198</li>
               <li><strong>Adresse :</strong> En tant qu'entrepreneur individuel bénéficiant de la diffusion partielle (article A123-96 du Code de commerce), l’adresse du siège n’est pas publiée.</li>
               <li><strong>Responsable de publication :</strong> Antoine Lozach</li>
               <li>
