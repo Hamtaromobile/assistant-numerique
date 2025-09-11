@@ -19,7 +19,7 @@ const MapWindow: React.FC = () => {
 
       {/* Zone principale */}
       <div
-        className="p-4 flex-grow min-h-[400px] flex items-center justify-center"
+        className=" flex-grow min-h-[400px] flex items-center justify-center"
         role="region"
         aria-labelledby="mapwindow-title"
       >

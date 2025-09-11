@@ -48,7 +48,7 @@ export default function BackgroundParallax() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: `center ${backgroundPositionY}px`,
-        opacity: 0.3,
+        opacity: 0.5,
       }}
     />
   );

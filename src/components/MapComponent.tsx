@@ -30,13 +30,7 @@ export default function MapComponent({ isMaximized = false }: MapComponentProps)
         isMaximized ? "max-w-full h-[80vh]" : "max-w-[1000px] h-[570px]"
       } mx-auto rounded-xl overflow-hidden shadow-md`}
     >
-      {/* Texte visible pour tous */}
-      <div
-        id="map-description"
-        className="text-sm text-center text-gray-700 py-2 bg-blue-100"
-      >
-        Zone de couverture estimée pour les prestations à domicile
-      </div>
+   
 
       {/* Description non visible pour les lecteurs d’écran */}
       <div

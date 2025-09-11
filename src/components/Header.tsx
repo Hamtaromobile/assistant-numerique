@@ -140,7 +140,6 @@ export default function Header() {
               onClick={(e) => handleSmoothScroll(e, "zone")}
               className="hover:underline flex items-center gap-1"
             >
-              <span aria-hidden="true">📍</span>
               <span className="sr-only">Zone d’intervention</span>
               <span className="not-sr-only">Zone d’intervention</span>
             </a>

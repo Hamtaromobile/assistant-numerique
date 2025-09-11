@@ -71,7 +71,7 @@ export default function CreditImpot() {
               <li>Installation et configuration de matériel (PC, imprimante, box…)</li>
               <li>Aide à l’utilisation de vos appareils</li>
               <li>Dépannage (virus, lenteurs, erreurs système…)</li>
-              <li>Accompagnement dans les démarches numériques simples</li>
+              <li>Accompagnement dans les démarches numériques</li>
             </ul>
           </section>
 
