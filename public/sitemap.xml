@@ -2,28 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://tonsite.fr/</loc>
+    <loc>https://antoine-informatique72.fr/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://tonsite.fr/soutien-informatique</loc>
+    <loc>https://antoine-informatique72.fr/soutien-informatique</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tonsite.fr/demarches-en-ligne</loc>
+    <loc>https://antoine-informatique72.fr/demarches-en-ligne</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tonsite.fr/installation-depannage</loc>
+    <loc>https://antoine-informatique72.fr/installation-depannage</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://tonsite.fr/credit-impot</loc>
+    <loc>https://antoine-informatique72.fr/credit-impot</loc>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://antoine-informatique72.fr/mentions-legales</loc>
+    <priority>0.5</priority>
   </url>
 
 </urlset>
