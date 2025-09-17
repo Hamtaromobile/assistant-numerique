@@ -6,7 +6,6 @@ import ServiceCard from "./components/ServiceCard";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import ContactActionButton from "./components/ContactActionButton";
 import { FaCarSide } from "react-icons/fa";
-import { PiMapPinLineDuotone } from "react-icons/pi";
 import { RiServiceLine } from "react-icons/ri";
 import MentionsLegales from "./components/MentionsLegales";
 import SoutienInformatique from "./components/SoutienInformatique";
