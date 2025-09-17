@@ -79,7 +79,7 @@ export function App() {
                   <section className={`flex flex-col items-center ${isMobile ? "mt-2" : "mt-20"}`}>
                     <h2 className="text-4xl font-titre font-bold text-gray-900 text-center mb-6 sm:mb-12 flex items-center justify-center gap-4 animate-fade-in-up">
                       <RiServiceLine className="w-10 h-10 text-sky-600" />
-                      Mes services
+                      Mes services à domicile
                     </h2>
 
                     <div className="relative bg-gray-900 rounded-xl p-2 shadow-2xl w-full max-w-6xl">

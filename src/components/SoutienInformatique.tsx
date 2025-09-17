@@ -140,9 +140,6 @@ export default function SoutienInformatique() {
             </p>
 
             <p className="mt-4 text-gray-800">
-              <span role="img" aria-hidden="true">
-                📍
-              </span>{" "}
               Je me déplace gratuitement dans un rayon de{" "}
               <strong>25 km autour de Saint-Marceau (72)</strong>.
             </p>
