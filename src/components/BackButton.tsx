@@ -5,7 +5,11 @@ export default function BackButton() {
 
   return (
     <button
-      onClick={() => navigate(-1)}
+      onClick={() => {
+      navigate(-1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      }}
+
       aria-label="Revenir à la page précédente"
       title="Retour"
       className="

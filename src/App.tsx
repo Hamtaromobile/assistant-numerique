@@ -1,16 +1,13 @@
 import { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ServiceCard from "./components/ServiceCard";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import ContactActionButton from "./components/ContactActionButton";
-
 import { FaCarSide } from "react-icons/fa";
 import { PiMapPinLineDuotone } from "react-icons/pi";
 import { RiServiceLine } from "react-icons/ri";
-
 import MentionsLegales from "./components/MentionsLegales";
 import SoutienInformatique from "./components/SoutienInformatique";
 import DemarchesEnLigne from "./components/DemarchesEnLigne";
@@ -19,8 +16,9 @@ import CreditImpot from "./components/CreditImpot";
 import BackgroundParallax from "./components/BackgroundParallax";
 import BackgroundImageWindow from "./components/BackgroundImageWindow";
 import { useBodyClass } from "./components/useBodyClass";
-
 import { LoadScript } from "@react-google-maps/api";
+import ScrollToTopOnRouteChange from "./components/ScrollToTopOnRouteChange";
+
 
 const MapWindow = lazy(() => import("./components/MapWindow"));
 
@@ -67,6 +65,7 @@ export function App() {
     <LoadScript googleMapsApiKey={googleMapsApiKey}>
       <Router>
         <BodyClassController />
+        <ScrollToTopOnRouteChange />
         <Routes>
           <Route
             path="/"

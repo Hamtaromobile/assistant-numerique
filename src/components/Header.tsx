@@ -46,7 +46,8 @@ export default function Header() {
   };
 
   const showZoneLink = location.pathname === "/" && isMobile && isOpen;
-  const showAboutLink = isMobile && isOpen;
+  const showAboutLink = location.pathname === "/" && isMobile && isOpen;
+
 
   // Fonction pour scroll smooth vers un id donné (utilisée pour zone et about)
   const handleSmoothScroll = (e: React.MouseEvent, id: string) => {
@@ -128,7 +129,6 @@ export default function Header() {
             >
               <span aria-hidden="true">🙋‍♂️</span>
               <span className="sr-only">À propos de moi</span>
-              <span aria-hidden="true" className="hidden">À propos de moi</span>
               <span className="not-sr-only">À propos de moi</span>
             </a>
           )}
