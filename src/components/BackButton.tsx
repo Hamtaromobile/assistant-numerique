@@ -3,16 +3,21 @@ import { useNavigate } from "react-router-dom";
 export default function BackButton() {
   const navigate = useNavigate();
 
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/"); // fallback vers l'accueil
+    }
+
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 50);
+  };
+
   return (
     <button
-      onClick={() => {
-  navigate(-1);
-  setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, 50); 
-}}
-
-
+      onClick={handleBack}
       aria-label="Revenir à la page précédente"
       title="Retour"
       className="
