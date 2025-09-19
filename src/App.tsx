@@ -109,26 +109,26 @@ export function App() {
                   />
 
                  <section className="mt-16" id="zone">
-  <h2 className="text-4xl font-titre font-bold text-gray-900 text-center mb-12 flex items-center justify-center gap-4 animate-fade-in-up">
-    <FaCarSide style={{ fontSize: iconSize }} className="text-sky-600 flex-shrink-0" />
-    Zone d’intervention
-  </h2>
+                    <h2 className="text-4xl font-titre font-bold text-gray-900 text-center mb-12 flex items-center justify-center gap-4 animate-fade-in-up">
+                      <FaCarSide style={{ fontSize: iconSize }} className="text-sky-600 flex-shrink-0" />
+                      Zone d’intervention
+                    </h2>
 
-  <div className="max-w-4xl mx-auto space-y-8">
-    <Suspense fallback={<div className="text-center py-10">Chargement de la carte...</div>}>
-      <MapWindow />
-    </Suspense>
+                    <div className="max-w-4xl mx-auto space-y-8">
+                      <Suspense fallback={<div className="text-center py-10">Chargement de la carte...</div>}>
+                        <MapWindow />
+                      </Suspense>
 
-    <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-md p-8">
-      <p className="text-gray-700 text-lg leading-relaxed text-center">
-        J’interviens principalement dans le nord de la Sarthe (72), autour de{" "}
-        <strong>Beaumont-sur-Sarthe</strong>, <strong>Saint-Marceau</strong>,{" "}
-        <strong>Sillé-le-Guillaume</strong>, <strong>Fresnay-sur-Sarthe</strong> et leurs environs, ainsi que sur{" "}
-        <strong>Le Mans</strong>.
-      </p>
-    </div>
-  </div>
-</section>
+                      <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-md p-8">
+                        <p className="text-gray-700 text-lg leading-relaxed text-center">
+                          J’interviens principalement dans le nord de la Sarthe (72), autour de{" "}
+                          <strong>Beaumont-sur-Sarthe</strong>, <strong>Saint-Marceau</strong>,{" "}
+                          <strong>Sillé-le-Guillaume</strong>, <strong>Fresnay-sur-Sarthe</strong> et leurs environs, ainsi que sur{" "}
+                          <strong>Le Mans</strong>.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
 
 
 

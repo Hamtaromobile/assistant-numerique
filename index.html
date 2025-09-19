@@ -1,18 +1,45 @@
 <!doctype html>
 <html lang="fr">
   <head>
+    <!-- 1️⃣ Encodage des caractères -->
     <meta charset="UTF-8" />
+    <!-- UTF-8 permet d'afficher correctement tous les caractères français -->
+
+    <!-- 2️⃣ Favicon -->
     <link rel="icon" type="image/svg+xml" href="/settings.svg" />
+    <!-- Optionnel :  PNG pour compatibilité 
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">-->
+
+    <!-- 3️⃣ Responsive / mobile-friendly -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Assistance informatique à domicile à Saint-Marceau, Sillé-le-Guillaume, Fresnay-sur-Sarthe, Beaumont-sur-Sarthe et alentours (Nord Sarthe - 72). Dépannage, installation, aide numérique."
-    />
+    <!-- Cela assure que le site s'adapte à toutes les tailles d'écran -->
+
+    <!-- 4️⃣ SEO de base -->
     <title>Assistant Numérique Sarthe</title>
-    
+    <meta name="description" content="Assistance informatique à domicile à Saint-Marceau, Sillé-le-Guillaume, Fresnay-sur-Sarthe, Beaumont-sur-Sarthe et alentours (Nord Sarthe - 72). Dépannage, installation, aide numérique." />
+    <meta name="keywords" content="assistance informatique, dépannage ordinateur, installation matériel, aide numérique, Saint-Marceau, Beaumont-sur-Sarthe, Sarthe">
+    <meta name="author" content="Assistant Numérique Sarthe">
+    <meta name="robots" content="index, follow" />
+
+    <!-- 5️⃣ Open Graph pour le partage sur les réseaux sociaux -->
+    <meta property="og:title" content="Assistant Numérique Sarthe - Dépannage & Aide Informatique" />
+    <meta property="og:description" content="Assistance informatique à domicile à Saint-Marceau, Sillé-le-Guillaume, Fresnay-sur-Sarthe et alentours. Dépannage, installation, aide numérique." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://www.antoine-informatique72.fr/" />
+
+    <!-- 6️⃣ Twitter Card (optionnel) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Assistant Numérique Sarthe - Dépannage & Aide Informatique" />
+    <meta name="twitter:description" content="Assistance informatique à domicile dans le Nord Sarthe. Dépannage, installation, aide numérique." />
+    <meta name="twitter:image" content="/og-image.png" />
+
   </head>
   <body>
+    <!-- 7️⃣ Racine de l'application React -->
     <div id="root"></div>
+
+    <!-- 8️⃣ Script principal (React + TypeScript) -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
