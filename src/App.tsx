@@ -135,8 +135,8 @@ export function App() {
                   <div className="my-24 border-t border-gray-300 w-full max-w-5xl mx-auto" />
                   <section>
                     <div id="about" className="max-w-5xl mx-auto grid gap-10 md:grid-cols-3 items-center border border-gray-200 rounded-3xl shadow-lg p-8 bg-white">
-                      <div className="flex justify-center md:justify-start">
-                        <div className="w-44 h-44 rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-300 transition-transform duration-300 hover:scale-105">
+                      <div className="flex justify-center md:justify-start lg:ml-8">
+                        <div className="w-56 h-56 rounded-2xl lg:w-56 lg:h-56 overflow-hidden bg-white shadow-lg border border-gray-300 transition-transform duration-300 hover:scale-105">
                           <img
                             src="/images/Antoine.webp"
                             alt="Portrait d'Antoine"
