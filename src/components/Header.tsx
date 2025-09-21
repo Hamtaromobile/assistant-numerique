@@ -73,7 +73,7 @@ export default function Header() {
             <Link to="/" onClick={handleLinkClick}>
               <Link to="/" onClick={handleLinkClick}>
   <img
-    src="/images/logo.png"
+    src="/images/logo.webp"
     alt="Logo Assistance informatique"
     className="hidden lg:block w-32 h-auto max-h-24 object-contain drop-shadow-md"
   />

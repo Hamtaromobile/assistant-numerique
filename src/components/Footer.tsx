@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Logo uniquement mobile, même taille que Header desktop */}
         <div className="block lg:hidden">
           <img
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt="Logo Assistance informatique"
             className="mx-auto w-32 h-auto max-h-24 object-contain drop-shadow-md"
           />
