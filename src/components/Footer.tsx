@@ -5,6 +5,15 @@ export default function Footer() {
       role="contentinfo"
     >
       <div className="max-w-4xl mx-auto space-y-2">
+        {/* Logo uniquement mobile, même taille que Header desktop */}
+        <div className="block lg:hidden">
+          <img
+            src="/images/logo.png"
+            alt="Logo Assistance informatique"
+            className="mx-auto w-32 h-auto max-h-24 object-contain drop-shadow-md"
+          />
+        </div>
+
         {/* Nom + droits */}
         <p>© {new Date().getFullYear()} Antoine Lozach — Tous droits réservés</p>
 

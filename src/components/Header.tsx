@@ -16,7 +16,6 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Fermer dropdown si clic en dehors ou touche Escape
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -48,14 +47,12 @@ export default function Header() {
   const showZoneLink = location.pathname === "/" && isMobile && isOpen;
   const showAboutLink = location.pathname === "/" && isMobile && isOpen;
 
-
-  // Fonction pour scroll smooth vers un id donné (utilisée pour zone et about)
   const handleSmoothScroll = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     handleLinkClick();
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 285; // Ajuste si besoin selon la hauteur du header
+      const headerOffset = 285;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - headerOffset;
       window.scrollTo({
@@ -66,29 +63,45 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-blue-900 text-white p-6 shadow-xl border-b-4 border-blue-700 rounded-b-xl">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between">
-        {/* Logo + bouton mobile */}
-        <div className="flex justify-between items-center w-full lg:w-auto">
-          <div>
-            <h1 className="text-3xl font-bold drop-shadow-md">
-              <Link
-                to="/"
-                className="hover:text-blue-300 transition-colors"
-                onClick={handleLinkClick}
+    <header className="bg-gradient-to-r from-sky-500 to-blue-700 text-white shadow-xl rounded-b-xl">
+      {/* Contenu principal */}
+      <div className="max-w-8xl mx-auto px-6 py-3 flex flex-col lg:flex-row items-center justify-between gap-6">
+        {/* Logo + Nom + bouton mobile */}
+        <div className="flex justify-between items-center w-full lg:w-auto gap-10">
+          <div className="flex items-center gap-8">
+            {/* Logo */}
+            <Link to="/" onClick={handleLinkClick}>
+              <Link to="/" onClick={handleLinkClick}>
+  <img
+    src="/images/logo.png"
+    alt="Logo Assistance informatique"
+    className="hidden lg:block w-32 h-auto max-h-24 object-contain drop-shadow-md"
+  />
+</Link>
+
+            </Link>
+
+            {/* Nom + slogan */}
+            <div>
+              <h1 className="text-3xl font-bold drop-shadow-md">
+                <Link
+                  to="/"
+                  className="hover:text-blue-200 transition-colors"
+                  onClick={handleLinkClick}
+                >
+                  Antoine LOZACH
+                </Link>
+              </h1>
+              <p
+                className="text-sm italic font-semibold text-white select-none leading-snug"
+                aria-label="Assistance informatique à domicile en Sarthe (72)"
               >
-                Antoine LOZACH
-              </Link>
-            </h1>
-            <p
-              className="text-sm italic font-semibold
-                         bg-gradient-to-r from-sky-400 via-sky-200 to-white
-                         bg-clip-text text-transparent select-none"
-              aria-label="Assistance informatique à domicile en Sarthe (72)"
-            >
-              Assistance informatique à domicile – Sarthe (72)
-            </p>
+                Assistance informatique à domicile – Sarthe (72)
+              </p>
+            </div>
           </div>
+
+          {/* Bouton mobile */}
           <button
             className="lg:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
@@ -106,7 +119,7 @@ export default function Header() {
           aria-label="Menu principal"
           className={`${
             isOpen ? "flex" : "hidden"
-          } flex-col lg:flex lg:flex-row items-center mt-4 lg:mt-0 gap-4 lg:gap-8 font-semibold text-lg relative`}
+          } flex-col lg:flex lg:flex-row items-center mt-4 lg:mt-0 gap-6 lg:gap-16 font-semibold text-lg relative`}
         >
           {/* Lien Accueil */}
           <Link
@@ -114,13 +127,12 @@ export default function Header() {
             onClick={handleLinkClick}
             className="hover:underline flex items-center gap-1"
           >
-            {/* Icône maison visible uniquement sur mobile */}
             <span aria-hidden="true" className="block sm:hidden">🏠</span>
             <span className="sr-only">Accueil</span>
             <span className="sm:not-sr-only">Accueil</span>
           </Link>
 
-          {/* Lien À propos de moi (mobile seulement quand menu ouvert) */}
+          {/* Lien À propos de moi */}
           {showAboutLink && (
             <a
               href="#about"
@@ -128,20 +140,18 @@ export default function Header() {
               className="hover:underline flex items-center gap-1"
             >
               <span aria-hidden="true">🙋‍♂️</span>
-              <span className="sr-only">À propos de moi</span>
-              <span className="not-sr-only">À propos de moi</span>
+              <span>À propos de moi</span>
             </a>
           )}
 
-          {/* Option Zone d’intervention uniquement sur page accueil mobile menu ouvert */}
+          {/* Lien Zone d’intervention */}
           {showZoneLink && (
             <a
               href="#zone"
               onClick={(e) => handleSmoothScroll(e, "zone")}
               className="hover:underline flex items-center gap-1"
             >
-              <span className="sr-only">Zone d’intervention</span>
-              <span className="not-sr-only">Zone d’intervention</span>
+              <span>Zone d’intervention</span>
             </a>
           )}
 
@@ -153,7 +163,6 @@ export default function Header() {
               aria-haspopup="true"
               aria-expanded={dropdownOpen}
               aria-controls="submenu-mes-services"
-              aria-label="Menu Mes services"
             >
               Mes services <ChevronDown size={18} />
             </button>
@@ -168,58 +177,48 @@ export default function Header() {
                   to="/soutien-informatique"
                   role="menuitem"
                   tabIndex={0}
-                  className="block px-4 py-2 hover:bg-blue-100  items-center gap-2"
+                  className="block px-4 py-2 hover:bg-blue-100"
                   onClick={handleLinkClick}
                 >
-                  <span aria-hidden="true">💻</span>
-                  <span className="sr-only">Soutien informatique</span>
-                  <span>Soutien informatique</span>
+                  💻 Soutien informatique
                 </Link>
                 <Link
                   to="/demarches-en-ligne"
                   role="menuitem"
                   tabIndex={0}
-                  className="block px-4 py-2 hover:bg-blue-100  items-center gap-2"
+                  className="block px-4 py-2 hover:bg-blue-100"
                   onClick={handleLinkClick}
                 >
-                  <span aria-hidden="true">🌐</span>
-                  <span className="sr-only">Démarches en ligne</span>
-                  <span>Démarches en ligne</span>
+                  🌐 Démarches en ligne
                 </Link>
                 <Link
                   to="/installation-depannage"
                   role="menuitem"
                   tabIndex={0}
-                  className="block px-4 py-2 hover:bg-blue-100 items-center gap-2"
+                  className="block px-4 py-2 hover:bg-blue-100"
                   onClick={handleLinkClick}
                 >
-                  <span aria-hidden="true">🔧</span>
-                  <span className="sr-only">Installation et dépannage</span>
-                  <span>Installation & dépannage</span>
+                  🔧 Installation & dépannage
                 </Link>
               </div>
             )}
           </div>
 
           {/* Contact */}
-          <a
-            href="tel:+33675418360"
-            className="hover:underline flex items-center gap-1"
-          >
-            <span aria-hidden="true">📞</span>
-            <span className="sr-only">Téléphone</span>
-            <span>06 75 41 83 60</span>
+          <a href="tel:+33675418360" className="hover:underline flex items-center gap-1">
+            📞 06 75 41 83 60
           </a>
           <a
             href="mailto:antoine.informatique72@gmail.com"
             className="hover:underline flex items-center gap-1"
           >
-            <span aria-hidden="true">📧</span>
-            <span className="sr-only">Email</span>
-            <span>antoine.informatique72@gmail.com</span>
+            📧 antoine.informatique72@gmail.com
           </a>
         </nav>
       </div>
+
+      {/* Ligne décorative dégradée inversée */}
+      <div className="h-1 w-full bg-gradient-to-r from-blue-700 to-sky-500"></div>
     </header>
   );
 }
