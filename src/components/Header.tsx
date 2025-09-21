@@ -52,7 +52,7 @@ export default function Header() {
     handleLinkClick();
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 285;
+      const headerOffset = 335;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - headerOffset;
       window.scrollTo({
@@ -72,12 +72,12 @@ export default function Header() {
             {/* Logo */}
             <Link to="/" onClick={handleLinkClick}>
               <Link to="/" onClick={handleLinkClick}>
-  <img
-    src="/images/logo.webp"
-    alt="Logo Assistance informatique"
-    className="hidden lg:block w-32 h-auto max-h-24 object-contain drop-shadow-md"
-  />
-</Link>
+                <img
+                  src="/images/logo.webp"
+                  alt="Logo Assistance informatique"
+                  className="hidden lg:block w-32 h-auto max-h-24 object-contain drop-shadow-md"
+                />
+              </Link>
 
             </Link>
 
