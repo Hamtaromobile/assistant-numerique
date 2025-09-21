@@ -70,70 +70,80 @@ export default function InstallationDepannage() {
 
           {/* 👨‍🔧 Une assistance claire et bienveillante */}
           <section
-            className="bg-gray-100 p-4 md:p-6 rounded-xl shadow-md mb-6 md:mb-8"
-            aria-labelledby="assistance-title"
-          >
-            <h2 id="assistance-title" className="text-xl md:text-2xl font-semibold mb-2">
-              <span role="img" aria-hidden="true">👨‍🔧</span> Une assistance claire et bienveillante
-            </h2>
-
-            <p className="block md:hidden">
-              Patience et pédagogie pour vous rendre autonome, sans jargon technique.
-            </p>
-            <p className="hidden md:block">
-              Chaque intervention est réalisée avec patience et pédagogie, pour que vous compreniez ce qui est fait. 
-              Mon objectif : vous rendre autonome dans l’utilisation de vos équipements, sans jargon technique inutile.
-            </p>
-          </section>
-
-          {/* 💶 Tarifs & zone d’intervention */}
-          <section
-            className="bg-blue-50 p-4 md:p-6 rounded-xl shadow mt-6 md:mt-8 text-center"
-            aria-labelledby="tarifs-title"
-          >
-            <h2 id="tarifs-title" className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
-              <span role="img" aria-hidden="true">💶</span> Tarifs & zone d’intervention
-            </h2>
-
-            <p className="text-gray-800 mb-2">
-              Tarif : <strong>50 € de l’heure</strong><br />
-              Grâce au crédit d’impôt de 50 % pour les services à la personne, 
-              vous récupérez <strong>25 €</strong> après votre déclaration annuelle. 
-              <br />
-              <span className="text-green-700 font-semibold">
-                ✅ Votre coût réel : <strong>25 € de l’heure</strong>
-              </span>
-              <br />
-              Chaque intervention est réalisée avec 
-              <span className="font-semibold text-blue-700"> patience</span>, 
-              <span className="font-semibold text-blue-700"> pédagogie</span> et 
-              <span className="font-semibold text-blue-700"> bienveillance</span>.
-            </p>
-
-            <p className="mt-3 text-gray-800">
-              <Link 
-                to="/credit-impot" 
-                className="inline-block bg-blue-700 text-white font-semibold px-4 py-2 rounded hover:bg-blue-800 transition"
+                role="region"
+                aria-labelledby="titre-tarifs"
+                className="bg-blue-50 p-4 md:p-6 rounded-xl shadow mt-6 md:mt-8 text-center"
               >
-                En savoir plus sur le crédit d’impôt
-              </Link>
-            </p>
+                <h2
+                  id="titre-tarifs"
+                  className="text-lg md:text-xl font-semibold mb-3 md:mb-4"
+                >
+                  <span role="img" aria-hidden="true">
+                    💶
+                  </span>{" "}
+                  Tarifs & zone d’intervention
+                </h2>
 
-            <p className="mt-4 text-gray-800">
-             Je me déplace gratuitement dans un rayon de <strong>25 km autour de Saint-Marceau (72)</strong>.
-            </p>
+                <div className="text-gray-800 mb-4 flex flex-col md:flex-col">
+                  {/* Coût réel en premier sur mobile */}
+                  <p className="mt-2 text-green-700 font-semibold text-lg order-1 md:order-3">
+                    ✅ Votre coût réel : <strong>26 € l’intervention</strong>
+                  </p>
 
-            <div className="mt-6 flex justify-center items-center flex-col">
-              <img 
-                src="/images/logoSAP.webp" 
-                alt="Logo Service à la Personne" 
-                className="h-12 md:h-16 mb-2"
-              />
-              <p className="text-xs md:text-sm text-gray-600 italic">
-                Activité agréée « Service à la Personne » – vous bénéficiez du crédit d’impôt
-              </p>
-            </div>
-          </section>
+                  {/* Crédit d’impôt */}
+                  <p className="mt-3 order-2 md:order-2">
+                    Grâce au crédit d’impôt de 50 % pour les services à la personne,  
+                    vous récupérez la moitié de la somme après votre déclaration annuelle.
+                  </p>
+
+                  {/* Tarif brut */}
+                  <div className="order-3 md:order-1 mt-3 md:mt-0">
+                    <p>
+                      Intervention complète : <strong className="text-blue-700">52 €</strong>
+                    </p>
+                    <p className="text-sm text-gray-600 italic">
+                      (En moyenne, une intervention dure entre 1 et 2 heures)
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-gray-800">
+                  Chaque intervention est réalisée avec 
+                  <span className="font-semibold text-blue-700"> patience</span>, 
+                  <span className="font-semibold text-blue-700"> pédagogie</span> et 
+                  <span className="font-semibold text-blue-700"> bienveillance</span>.
+                </p>
+
+                <p className="mt-4">
+                  <Link
+                    to="/credit-impot"
+                    className="inline-block bg-blue-700 text-white font-semibold px-4 py-2 rounded hover:bg-blue-800 transition"
+                    aria-describedby="desc-credit-impot"
+                  >
+                    En savoir plus sur le crédit d’impôt
+                  </Link>
+                  <span id="desc-credit-impot" className="sr-only">
+                    Cliquez pour obtenir des détails sur le crédit d’impôt de 50 % pour les services à la personne.
+                  </span>
+                </p>
+
+                <p className="mt-4 text-gray-800">
+                  Je me déplace gratuitement dans un rayon de{" "}
+                  <strong>25 km autour de Saint-Marceau (72)</strong>.
+                </p>
+
+                <div className="mt-6 flex justify-center items-center flex-col">
+                  <img
+                    src="/images/logoSAP.webp"
+                    alt="Logo Service à la Personne"
+                    className="h-12 md:h-16 mb-2"
+                  />
+                  <p className="text-xs md:text-sm text-gray-600 italic">
+                    Activité agréée « Service à la Personne » – vous bénéficiez du crédit
+                    d’impôt
+                  </p>
+                </div>
+            </section>
         </ScreenFrame>
       </main>
       <Footer />
