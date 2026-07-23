@@ -61,7 +61,7 @@ export function App() {
 
   return (
     <LoadScript googleMapsApiKey={googleMapsApiKey}>
-      <Router basename={import.meta.env.BASE_URL}>
+      <Router basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
         <BodyClassController />
         <ScrollToTopOnRouteChange />
         <Routes>
