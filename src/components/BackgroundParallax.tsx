@@ -44,7 +44,7 @@ export default function BackgroundParallax() {
       className="fixed top-0 left-0 w-full -z-10 pointer-events-none"
       style={{
         height: docHeight + "px",
-        backgroundImage: "url('/images/backgroundAccueil.webp')",
+        backgroundImage: `url(${import.meta.env.BASE_URL}images/backgroundAccueil.webp)`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: `center ${backgroundPositionY}px`,
