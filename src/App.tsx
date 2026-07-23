@@ -138,7 +138,7 @@ export function App() {
                       <div className="flex justify-center md:justify-start lg:ml-8">
                         <div className="w-56 h-56 rounded-2xl lg:w-56 lg:h-56 overflow-hidden bg-white shadow-lg border border-gray-300 transition-transform duration-300 hover:scale-105">
                           <img
-                            src="/images/Antoine.webp"
+                            src={`${import.meta.env.BASE_URL}images/Antoine.webp`}
                             alt="Portrait d'Antoine"
                             className="w-full h-full object-cover"
                             loading="lazy"

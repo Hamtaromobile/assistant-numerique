@@ -10,7 +10,7 @@ export default function BackgroundImageWindow({ children }: BackgroundImageWindo
 
       {/* Image de fond décorative */}
       <img
-        src="/images/windows-xp.webp"
+        src={`${import.meta.env.BASE_URL}images/windows-xp.webp`}
         alt="" // Image décorative => pas de description
         role="presentation"
         aria-hidden="true"

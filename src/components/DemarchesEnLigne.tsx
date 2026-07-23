@@ -160,7 +160,7 @@ export default function DemarchesEnLigne() {
 
                 <div className="mt-6 flex justify-center items-center flex-col">
                   <img
-                    src="/images/logoSAP.webp"
+                    src={`${import.meta.env.BASE_URL}images/logoSAP.webp`}
                     alt="Logo Service à la Personne"
                     className="h-12 md:h-16 mb-2"
                   />
