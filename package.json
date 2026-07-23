@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  
   "scripts": {
     "tailwind:init": "tailwindcss init -p",
     "dev": "vite",
@@ -12,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/react-router-dom": "^5.3.3",
