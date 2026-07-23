@@ -11,7 +11,7 @@ export default function ScreenFrame({ children }: ScreenFrameProps) {
       aria-label="Encadrement style smartphone"
       className="max-w-4xl mx-auto p-6 bg-white rounded-3xl shadow-xl border border-gray-300 relative"
       style={{
-        backgroundImage: `url('/images/backgroundTelephoneCard.webp')`,
+        backgroundImage: `url('${import.meta.env.BASE_URL}images/backgroundTelephoneCard.webp')`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center bottom",
         backgroundSize: "cover",
