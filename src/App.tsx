@@ -61,7 +61,7 @@ export function App() {
 
   return (
     <LoadScript googleMapsApiKey={googleMapsApiKey}>
-      <Router basename="/assistant-numerique">
+      <Router basename={import.meta.env.BASE_URL}>
         <BodyClassController />
         <ScrollToTopOnRouteChange />
         <Routes>
